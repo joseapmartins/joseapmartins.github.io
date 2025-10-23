@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>José — Polymer Physicist</title>
+  <meta name="description" content="José — Polymer Physicist and Professor of Electronic & Computer Engineering" />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #111827;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #38bdf8;
+      --link: #93c5fd;
+      --chip: #1f2937;
+      --border: #1f2937;
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f8fafc;
+        --card: #ffffff;
+        --text: #0f172a;
+        --muted: #475569;
+        --accent: #0284c7;
+        --link: #1d4ed8;
+        --chip: #e2e8f0;
+        --border: #e5e7eb;
+      }
+    }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: linear-gradient(180deg, var(--bg), rgba(2,6,23,0.9)), radial-gradient(1200px 800px at 80% -10%, rgba(56,189,248,0.12), transparent 60%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .container { max-width: 980px; margin: 0 auto; padding: 32px 20px 80px; }
+    header { display: flex; gap: 24px; align-items: center; padding: 24px; border: 1px solid var(--border); border-radius: 18px; background: var(--card); box-shadow: 0 10px 30px rgba(0,0,0,0.12); }
+    header img { width: 104px; height: 104px; border-radius: 14px; object-fit: cover; border: 1px solid var(--border); }
+    h1 { font-size: clamp(28px, 3.5vw, 40px); line-height: 1.1; margin: 0; }
+    .subtitle { color: var(--muted); margin-top: 4px; font-size: 15px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+    .chip { font-size: 12px; padding: 6px 10px; border-radius: 999px; background: var(--chip); color: var(--muted); border: 1px solid var(--border); }
+    nav { position: sticky; top: 0; backdrop-filter: saturate(160%) blur(6px); background: color-mix(in srgb, var(--bg) 80%, transparent); border-bottom: 1px solid var(--border); }
+    nav .nav-inner { max-width: 980px; margin: 0 auto; display: flex; gap: 16px; padding: 8px 20px; overflow-x: auto; }
+    nav a { color: var(--link); text-decoration: none; padding: 10px 12px; border-radius: 10px; font-weight: 600; }
+    nav a:hover { background: var(--chip); }
+
+    section { margin-top: 36px; padding: 24px; border: 1px solid var(--border); border-radius: 18px; background: var(--card); box-shadow: 0 10px 26px rgba(0,0,0,0.10); }
+    section h2 { margin: 0 0 12px; font-size: 22px; }
+    .grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+    .card { border: 1px solid var(--border); border-radius: 14px; padding: 16px; background: linear-gradient(180deg, color-mix(in srgb, var(--card) 92%, transparent), var(--card)); }
+    .muted { color: var(--muted); }
+    .pub { display: grid; gap: 6px; }
+    .pub .title { font-weight: 600; }
+    .pub .meta { font-size: 13px; color: var(--muted); }
+
+    .cta { display: inline-flex; align-items: center; gap: 10px; border: 1px solid var(--border); background: var(--chip); color: var(--text); text-decoration: none; padding: 10px 14px; border-radius: 12px; font-weight: 700; }
+    .cta:hover { transform: translateY(-1px); transition: transform .15s ease; }
+    footer { text-align: center; color: var(--muted); margin-top: 28px; font-size: 13px; }
+    code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+    pre { overflow-x: auto; background: var(--chip); padding: 14px; border-radius: 12px; border: 1px solid var(--border); }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#teaching">Teaching</a>
+      <a href="#contact">Contact</a>
+      <a href="cv.pdf" target="_blank" rel="noopener">CV</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <header>
+      <img src="avatar.jpg" alt="Portrait of José" onerror="this.style.display='none'" />
+      <div>
+        <h1>José — Polymer Physicist</h1>
+        <p class="subtitle">Researcher & Professor — Polymer Physics</p>
+        <div class="chips">
+          <span class="chip">Polymer melts</span>
+          <span class="chip">Crystallization kinetics</span>
+          <span class="chip">Entanglements</span>
+          <span class="chip">Short‑range order</span>
+          <span class="chip">Rheology</span>
+          <span class="chip">Nanocomposites</span>
+        </div>
+      </div>
+    </header>
+
+    <section id="about">
+      <h2>About</h2>
+      <p>
+        I study the physics of polymers and soft materials. My work focuses on crystallization kinetics (including melt memory), the physical nature of entanglements, rheology and flow activation volumes, and short‑range order in polymer melts. I also build experimental methods and analysis protocols for studying flow‑induced crystallization.
+      </p>
+      <p class="muted">Short bio, current affiliation, and research highlights go here.</p>
+    </section>
+
+    <section id="research">
+      <h2>Research</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Melt memory & crystallization</h3>
+          <p class="muted">Quiescent vs. shear‑induced kinetics; steady‑state shear; spherulite size prediction.</p>
+        </div>
+        <div class="card">
+          <h3>Entanglements — physical basis</h3>
+          <p class="muted">From binary contacts to short‑range ordered regions; implications for plateau modulus.</p>
+        </div>
+        <div class="card">
+          <h3>Rheology & flow activation volume</h3>
+          <p class="muted">Step‑shear protocols; tube model interpretation; nanocomposites with CNT.</p>
+        </div>
+        <div class="card">
+          <h3>Short‑range order in melts</h3>
+          <p class="muted">MD‑informed analyses of local order in polyethylene and other melts.</p>
+        </div>
+        <div class="card">
+          <h3>Instrumentation</h3>
+          <p class="muted">Shear DTA for isothermal & non‑isothermal crystallization under controlled shear.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications">
+      <h2>Selected Publications</h2>
+      <div class="pub">
+        <div class="title">Origin of the melt memory effect in polymer crystallization</div>
+        <div class="meta">Polymer, 51, 4185–4194 (2010)</div>
+      </div>
+      <div class="pub">
+        <div class="title">Analysis of the adequacy of the representation of entanglement effects by chain loops</div>
+        <div class="meta">Macromolecular Theory and Simulations, 19, 360–369 (2010)</div>
+      </div>
+      <div class="pub">
+        <div class="title">Toward a physical definition of entanglements</div>
+        <div class="meta">Journal of Macromolecular Science, Part B: Physics, 50, 769–794 (2011)</div>
+      </div>
+      <div class="pub">
+        <div class="title">Flow activation volume in composites of polystyrene and multiwall carbon nanotubes</div>
+        <div class="meta">Macromolecules, 44, 9804–9813 (2011)</div>
+      </div>
+      <div class="pub">
+        <div class="title">What is the flow activation volume of entangled polymer melts?</div>
+        <div class="meta">Colloid and Polymer Science, 290, 23–29 (2012)</div>
+      </div>
+      <div class="pub">
+        <div class="title">Saturation of shear‑induced isothermal crystallization and the entanglement–disentanglement transition</div>
+        <div class="meta">Macromolecules, 39, 7626–7634 (2006)</div>
+      </div>
+      <div class="pub">
+        <div class="title">Short‑range order in polyethylene melts: identification and characterization</div>
+        <div class="meta">Macromolecules, 46, 7977–7988 (2013)</div>
+      </div>
+      <div class="pub">
+        <div class="title">Shear‑induced nonisothermal crystallization of low‑density polyethylene</div>
+        <div class="meta">Polymer, 48, 6215–6220 (2007)</div>
+      </div>
+      <p class="muted">More papers and preprints on request.</p>
+    </section>
+
+    <section id="teaching">
+      <h2>Teaching & Materials</h2>
+      <ul>
+        <li>Polymer Physics — notes & problem sets</li>
+        <li>Crystallization & Rheology — lab handouts</li>
+        <li><a href="https://artigosdemerda.blogspot.com/p/pagina-2.html" target="_blank" rel="noopener">Course materials & research notes</a></li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>
+        Email: <a href="mailto:you@example.com">you@example.com</a> • 
+        Scholar: <a href="#" target="_blank" rel="noopener">Google Scholar</a> • 
+        ORCID: <a href="#" target="_blank" rel="noopener">0000-0000-0000-0000</a> • 
+        GitHub: <a href="https://github.com/" target="_blank" rel="noopener">(link)</a>
+      </p>
+      <a class="cta" href="cv.pdf" target="_blank" rel="noopener">Download CV</a>
+    </section>
+
+    <footer>
+      © <span id="year"></span> José • Built with GitHub Pages.
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
