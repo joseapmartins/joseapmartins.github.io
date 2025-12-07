@@ -72,6 +72,11 @@
     nav { position: sticky; top: 0; backdrop-filter: saturate(140%) blur(6px); background: color-mix(in srgb, var(--bg) 85%, transparent); border-bottom: 1px solid var(--border); }
     code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
     pre { overflow-x: auto; background: var(--chip); padding: 14px; border-radius: 12px; border: 1px solid var(--border); }
+    .about-block { background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 28px; box-shadow: 0 8px 20px rgba(0,0,0,0.06); }
+    .about-inner { display: grid; gap: 18px; font-size: 15.5px; line-height: 1.7; }
+    .about-inner p { margin: 0; }
+    .about-inner a { color: var(--link); }
+    .intro-line { margin-top: 12px; font-style: italic; }
   </style>
 </head>
 <body>
@@ -82,7 +87,7 @@
       <a href="#publications">Publications</a>
       <a href="#teaching">Teaching</a>
       <a href="#contact">Contact</a>
-      <a href="cv.pdf" target="_blank" rel="noopener">CV</a>
+      <a href="cv.pdf" >CV</a>
     </div>
   </nav>
 
@@ -103,12 +108,49 @@
       </div>
     </header>
 
-    <section id="about">
+    <section id="about" class="about-block">
       <h2>About</h2>
-      <p>
-        I am <strong>José A. Martins</strong>, a polymer physicist. I’m 64 and I like simple, careful work. I’ve published fewer papers than many colleagues because I’ve spent a long time wrestling with a few hard problems — melt memory, what an <em>entanglement</em> really is, and how local order governs kinetics.
-      </p>
-      <p class="muted">If you prefer substance over volume, we’ll get along.</p>
+      <div class="about-inner">
+        <p>
+          I've graduated in Physics at the University of Lisbon. I started my scientific career in a State Laboratory, working with a Van de Graaff generator doing Rutherford backscattering experiments.
+          I entered the polymer field after obtaining a degree in Materials Science (IST — Technical University of Lisbon) and a PhD in Polymer Science and Engineering (University of Minho).
+          Both my Master's Degree and PhD were on the modelling of polymer crystallization.
+        </p>
+
+        <p>
+          After my PhD, I invented and built a shear-DTA instrument and started a set of experiments to understand crystallization after shear deformations and the origin of the melt memory effect.
+          Surprisingly, both amorphous and semicrystalline polymers respond similarly to shear deformations applied to the molten state.
+          This result led me to study shear-induced structures and the effect of shear deformations and melt temperature on these structures.
+          I've even estimated their size. However, I didn’t have access to experimental facilities or funding to perform the required studies.
+        </p>
+
+        <p>
+          Around 2012, I turned to molecular dynamics simulations without knowing anything about the subject.
+          I received the assistance of Nuno Micaelo, who helped me set up the first systems and taught me the basics.
+          A key requirement was that the systems should mimic, as closely as possible, the experimental behaviour of the materials.
+          Later, I developed codes to read the trajectory files and analyse them on a Kuhn-segment basis.
+          The first results were obtained through trial and error. Slowly (over about ten years) this work developed into a detailed analysis of melt morphology for entangled and unentangled systems at different temperatures, their crystallization, and their response to shear deformations.
+        </p>
+
+        <p>
+          So far, I’ve studied flexible and semiflexible polymer chains, amorphous polymers, and polymers with different tacticities.
+          All these results are still unpublished, mainly due to lack of time and to other difficulties I’m facing at the institutional level.
+        </p>
+
+        <p>
+          I was forced to create this page to promote my scientific work because the page I had at my Department’s site was closed and my name removed from the Department’s webpage.
+          If you visit <a href="https://www.dep.uminho.pt" target="_blank">www.dep.uminho.pt</a>, the site of the Department of Polymer Engineering, you’ll find a Department without people.
+          The reason for this censorship, I think, is the exposure I’ve been making through other channels of the incompetence within my working institution and the lack of ethics by senior members — namely the appropriation of scientific work authored by others and published in high-impact journals (Nature, Science) to get funding from a state agency.
+        </p>
+
+        <p>
+          As you may easily imagine, this situation has impacted my personal life, my career within the institution, and it is also one of the reasons for the difficulties I’ve faced in developing my work.
+        </p>
+
+        
+
+        <p class="muted final-note">If you prefer substance over volume, we’ll get along.</p>
+      </div>
     </section>
 
     <section id="research">
@@ -140,71 +182,71 @@
         <div class="card">
           <h3>Crystallization — kinetics, melt memory, shear</h3>
           <ul>
-            <li><a href="/papers/MARTINS Origin melt memory Polymer 51 4185 (2010).pdf" target="_blank" rel="noopener">Origin of the melt memory effect in polymer crystallization</a> — <span class="muted">Polymer 51, 4185–4194 (2010) — José A. Martins</span></li>
-            <li><a href="/papers/P21_MARTINS Effect of melt memory shear-induced cryst MacromRapidComun 27 1067 (2006).pdf" target="_blank" rel="noopener">Evaluation of the effect of melt memory on shear‑induced crystallization of LDPE</a> — <span class="muted">Macromol. Rapid Commun. 27, 1067 (2006) — José A. Martins</span></li>
-            <li><a href="/papers/P22_MARTINS Saturation of Shear-Induced Isothermal Crystallization Macromolecules 39 7626 (2006).pdf" target="_blank" rel="noopener">Saturation of shear‑induced isothermal crystallization; steady state & entanglement–disentanglement transition</a> — <span class="muted">Macromolecules 39, 7626–7634 (2006) — José A. Martins</span></li>
-            <li><a href="/papers/P23_ZHANG Saturation shear-induced non-isoth cryst PE Polymer 48 6215 (2007).pdf" target="_blank" rel="noopener">Saturation of shear‑induced non‑isothermal crystallization of polyethylene</a> — <span class="muted">Polymer 48, 6215–6220 (2007) — José A. Martins</span></li>
-            <li><a href="/papers/P14_MARTINS Sample temperature increase shear-induced crystallization Polymer 44 8071 (2003).pdf" target="_blank" rel="noopener">Sample temperature increase during quiescent & shear‑induced isothermal crystallization of PE</a> — <span class="muted">Polymer 44, 8071–8079 (2003) — José A. Martins</span></li>
-            <li><a href="/papers/P6_MARTINS Non isothermal crystallization kinetic swith instantaneous nucleation POLYMER 41 6875 (2000).pdf" target="_blank" rel="noopener">Non‑isothermal crystallization kinetics with instantaneous nucleation</a> — <span class="muted">Polymer 41, 6875–6884 (2000) — José A. Martins</span></li>
-            <li><a href="/papers/P7_MARTINS The nonisothermal cryst kinetics of PP after DSC calibration on coling JMacromSciPhys B39 7111 (2000).pdf" target="_blank" rel="noopener">Non‑isothermal crystallization kinetics of polypropylene after DSC calibration on cooling</a> — <span class="muted">J. Macromol. Sci., Phys. B39, 711–722 (2000) — José A. Martins</span></li>
-            <li><a href="/papers/P3_MARTINS The isothermal crystallization of POM and PEEK CPS 1 1 (1994).pdf" target="_blank" rel="noopener">The isothermal crystallization of POM and PEEK</a> — <span class="muted">Colloid & Polymer Science 272, 1–16 (1994) — José A. Martins</span></li>
+            <li>Origin of the melt memory effect in polymer crystallization</a> — <span class="muted">Polymer 51, 4185–4194 (2010) — José A. Martins</span></li>
+            <li>Evaluation of the effect of melt memory on shear‑induced crystallization of LDPE</a> — <span class="muted">Macromol. Rapid Commun. 27, 1067 (2006) — José A. Martins</span></li>
+            <li>Saturation of shear‑induced isothermal crystallization; steady state & entanglement–disentanglement transition</a> — <span class="muted">Macromolecules 39, 7626–7634 (2006) — José A. Martins</span></li>
+            <li>Saturation of shear‑induced non‑isothermal crystallization of polyethylene</a> — <span class="muted">Polymer 48, 6215–6220 (2007) — José A. Martins</span></li>
+            <li>Sample temperature increase during quiescent & shear‑induced isothermal crystallization of PE</a> — <span class="muted">Polymer 44, 8071–8079 (2003) — José A. Martins</span></li>
+            <li>Non‑isothermal crystallization kinetics with instantaneous nucleation</a> — <span class="muted">Polymer 41, 6875–6884 (2000) — José A. Martins</span></li>
+            <li>Non‑isothermal crystallization kinetics of polypropylene after DSC calibration on cooling</a> — <span class="muted">J. Macromol. Sci., Phys. B39, 711–722 (2000) — José A. Martins</span></li>
+            <li>The isothermal crystallization of POM and PEEK</a> — <span class="muted">Colloid & Polymer Science 272, 1–16 (1994) — José A. Martins</span></li>
           </ul>
         </div>
 
         <div class="card">
           <h3>Instrumentation, calibration & true sample temperature</h3>
           <ul>
-            <li><a href="/papers/P20_MARTINS Shear differential Thermal Analysis RSI 76 105105 (2005).pdf" target="_blank" rel="noopener">Isothermal & non‑isothermal crystallization with a shear differential thermal analyzer</a> — <span class="muted">Rev. Sci. Instrum. 76, 105105 (2005) — José A. Martins</span></li>
-            <li><a href="/papers/P17_ZHANG Temp calibration of a parallel plate rheometer TActa 413 101 (2004).pdf" target="_blank" rel="noopener">Temperature calibration of a parallel‑plate rheometer; thermal lags during solidification</a> — <span class="muted">Thermochim. Acta 413, 101–110 (2004) — José A. Martins</span></li>
-            <li><a href="/papers/P16_MARTINS True sample temp effect on the overall crystallization kinetcis JApplPolymSci 91 125 (2004).pdf" target="_blank" rel="noopener">True sample temperatures in isothermal DSC and their effect on overall crystallization kinetics</a> — <span class="muted">J. Appl. Polym. Sci. 91, 125–131 (2004) — José A. Martins</span></li>
-            <li><a href="/papers/P4_MARTINS Temperature calibration on cooling of DSC TACTA 332 179 (1999).pdf" target="_blank" rel="noopener">Temperature calibration on cooling of DSC</a> — <span class="muted">Thermochim. Acta 332, 179–188 (1999) — José A. Martins</span></li>
-            <li><a href="/papers/P19_MALHEIRO Calibration errors on cooling TActa  420 155 (2004).pdf" target="_blank" rel="noopener">Evaluation of calibration errors on cooling of DSC (different standards)</a> — <span class="muted">Thermochim. Acta 420, 155–161 (2004) — José A. Martins</span></li>
-            <li><a href="/papers/P8_MARTINS Erratum and further comments to TACTA 369 175 (2001).pdf" target="_blank" rel="noopener">Erratum & further comments on temperature correction of DMA/TMA</a> — <span class="muted">Thermochim. Acta 369, 175–178 (2001) — José A. Martins</span></li>
+            <li>Isothermal & non‑isothermal crystallization with a shear differential thermal analyzer</a> — <span class="muted">Rev. Sci. Instrum. 76, 105105 (2005) — José A. Martins</span></li>
+            <li>Temperature calibration of a parallel‑plate rheometer; thermal lags during solidification</a> — <span class="muted">Thermochim. Acta 413, 101–110 (2004) — José A. Martins</span></li>
+            <li>True sample temperatures in isothermal DSC and their effect on overall crystallization kinetics</a> — <span class="muted">J. Appl. Polym. Sci. 91, 125–131 (2004) — José A. Martins</span></li>
+            <li>Temperature calibration on cooling of DSC</a> — <span class="muted">Thermochim. Acta 332, 179–188 (1999) — José A. Martins</span></li>
+            <li>Evaluation of calibration errors on cooling of DSC (different standards)</a> — <span class="muted">Thermochim. Acta 420, 155–161 (2004) — José A. Martins</span></li>
+            <li>Erratum & further comments on temperature correction of DMA/TMA</a> — <span class="muted">Thermochim. Acta 369, 175–178 (2001) — José A. Martins</span></li>
           </ul>
         </div>
 
         <div class="card">
           <h3>Nucleation density, spherulites & rotational molding</h3>
           <ul>
-            <li><a href="/papers/P13_MARTINS Prediction of Spherulite Size in Rotationally Molded Polypropylene JMAcromSciPhys B42 367 (2003).pdf" target="_blank" rel="noopener">Prediction of spherulite size in rotationally molded polypropylene</a> — <span class="muted">J. Macromol. Sci., Phys. B42, 367–385 (2003) — José A. Martins</span></li>
-            <li><a href="/papers/P9_MARTINS Evaluation of the instantaneous nucleation density Polymer 43 3999 (2002).pdf" target="_blank" rel="noopener">Evaluation of instantaneous nucleation density</a> — <span class="muted">Polymer 43, 3999–4007 (2002) — José A. Martins</span></li>
-            <li><a href="/papers/P10_MARTINS Role of temperature erros on the prediction of the density of nuclei TActa 391 97 (2002).pdf" target="_blank" rel="noopener">Role of temperature errors on predicting nuclei density in DSC scans</a> — <span class="muted">Thermochim. Acta 391, 97–106 (2002) — José A. Martins</span></li>
+            <li>Prediction of spherulite size in rotationally molded polypropylene</a> — <span class="muted">J. Macromol. Sci., Phys. B42, 367–385 (2003) — José A. Martins</span></li>
+            <li>Evaluation of instantaneous nucleation density</a> — <span class="muted">Polymer 43, 3999–4007 (2002) — José A. Martins</span></li>
+            <li>Role of temperature errors on predicting nuclei density in DSC scans</a> — <span class="muted">Thermochim. Acta 391, 97–106 (2002) — José A. Martins</span></li>
           </ul>
         </div>
 
         <div class="card">
           <h3>Entanglements — theory & physical basis</h3>
           <ul>
-            <li><a href="/papers/P25_MARTINS  Adequacy of the representation of entanglements with chain loops MacromTheorySimul 19 360 (2010).pdf" target="_blank" rel="noopener">Adequacy of representing entanglement effects by chain loops</a> — <span class="muted">Macromol. Theory Simul. 19, 360–369 (2010) — José A. Martins</span></li>
-            <li><a href="/papers/P27_MARTINS Toward a physical definition of entanglement JMSPhys 50 769 (2011).pdf" target="_blank" rel="noopener">Toward a physical definition of entanglements</a> — <span class="muted">J. Macromol. Sci., Phys. 50, 769–794 (2011) — José A. Martins</span></li>
+            <li>Adequacy of representing entanglement effects by chain loops</a> — <span class="muted">Macromol. Theory Simul. 19, 360–369 (2010) — José A. Martins</span></li>
+            <li>Toward a physical definition of entanglements</a> — <span class="muted">J. Macromol. Sci., Phys. 50, 769–794 (2011) — José A. Martins</span></li>
           </ul>
         </div>
 
         <div class="card">
           <h3>Flow activation volume & rheology</h3>
           <ul>
-            <li><a href="/papers/MARTINS FLow Actiivation volume Macrom 2011.pdf" target="_blank" rel="noopener">Flow activation volume in polystyrene/MWCNT composites</a> — <span class="muted">Macromolecules (2011) — José A. Martins</span></li>
-            <li><a href="/papers/P30_MARTINS Flow activation volume PS_nanotubes Polymer 52 5149 (2011).pdf" target="_blank" rel="noopener">Flow activation volume of polystyrene/multiwall carbon nanotube composites</a> — <span class="muted">Polymer 52, 5149–5155 (2011) — José A. Martins</span></li>
-            <li><a href="/papers/MARTINS What is  the flow activation volume polymer melts CPS 290 23 (2012).pdf" target="_blank" rel="noopener">What is the flow activation volume of entangled polymer melts?</a> — <span class="muted">Colloid Polym. Sci. 290, 23–29 (2012) — José A. Martins</span></li>
+            <li>Flow activation volume in polystyrene/MWCNT composites</a> — <span class="muted">Macromolecules (2011) — José A. Martins</span></li>
+            <li>Flow activation volume of polystyrene/multiwall carbon nanotube composites</a> — <span class="muted">Polymer 52, 5149–5155 (2011) — José A. Martins</span></li>
+            <li>What is the flow activation volume of entangled polymer melts?</a> — <span class="muted">Colloid Polym. Sci. 290, 23–29 (2012) — José A. Martins</span></li>
           </ul>
         </div>
 
         <div class="card">
           <h3>Short‑range order, nanocomposites & optics</h3>
           <ul>
-            <li><a href="/papers/MARTINS MICAELO Short-range order PE Macrom 46 7977 (2013).pdf" target="_blank" rel="noopener">Short‑range order in polyethylene melts: identification & characterization</a> — <span class="muted">Macromolecules 46, 7977–7988 (2013) — José A. Martins</span></li>
-            <li><a href="/papers/P18_ESTEVES Crystallization nanocomposites SiO2 COMPOSITESb 36 51 (2005).pdf" target="_blank" rel="noopener">Crystallization behaviour of polyamide‑based SiO₂ nanocomposites</a> — <span class="muted">Composites Part B 36, 51–59 (2005) — José A. Martins</span></li>
-            <li><a href="/papers/P11_MARTINS Optical prop injection moulded scintilators Dopants JApplPolymSci 88 2714 (2003).pdf" target="_blank" rel="noopener">Optical properties of injection‑molded PS scintillators II: dopant distribution</a> — <span class="muted">J. Appl. Polym. Sci. 88, 2714–2718 (2003) — José A. Martins</span></li>
-            <li><a href="/papers/P12_MARTINS Optical prop injection moulded scintilators Processing JApplPolymSci 88 2706 (2003).pdf" target="_blank" rel="noopener">Optical properties of injection‑molded PS scintillators I: processing & optical properties</a> — <span class="muted">J. Appl. Polym. Sci. 88, 2706–2713 (2003) — José A. Martins</span></li>
-            <li><a href="/papers/P15_DOMINGUES Dying of PA66 fibers JTAC 74 749 (2003).pdf" target="_blank" rel="noopener">Dyeing of PA6.6 fibers: solvent & temperature effects on thermal properties</a> — <span class="muted">J. Therm. Anal. Calorim. 74, 749–759 (2003) — José A. Martins</span></li>
+            <li>Short‑range order in polyethylene melts: identification & characterization</a> — <span class="muted">Macromolecules 46, 7977–7988 (2013) — José A. Martins</span></li>
+            <li>Crystallization behaviour of polyamide‑based SiO₂ nanocomposites</a> — <span class="muted">Composites Part B 36, 51–59 (2005) — José A. Martins</span></li>
+            <li>Optical properties of injection‑molded PS scintillators II: dopant distribution</a> — <span class="muted">J. Appl. Polym. Sci. 88, 2714–2718 (2003) — José A. Martins</span></li>
+            <li>Optical properties of injection‑molded PS scintillators I: processing & optical properties</a> — <span class="muted">J. Appl. Polym. Sci. 88, 2706–2713 (2003) — José A. Martins</span></li>
+            <li>Dyeing of PA6.6 fibers: solvent & temperature effects on thermal properties</a> — <span class="muted">J. Therm. Anal. Calorim. 74, 749–759 (2003) — José A. Martins</span></li>
           </ul>
         </div>
 
         <div class="card">
           <h3>Earlier thermal analysis & methodology</h3>
           <ul>
-            <li><a href="/papers/P1_MARTINS JTAC 40 629 (1993).pdf" target="_blank" rel="noopener">Isothermal & non‑isothermal spherulite growth parameters from OM & DSC</a> — <span class="muted">J. Therm. Anal. 40, 629–636 (1993) — José A. Martins</span></li>
-            <li><a href="/papers/P2_MARTINS JTAC 40 621 (1993).pdf" target="_blank" rel="noopener">Prediction of POM non‑isothermal crystallization from isothermal data</a> — <span class="muted">J. Therm. Anal. 40, 621–628 (1993) — José A. Martins</span></li>
+            <li>Isothermal & non‑isothermal spherulite growth parameters from OM & DSC</a> — <span class="muted">J. Therm. Anal. 40, 629–636 (1993) — José A. Martins</span></li>
+            <li>Prediction of POM non‑isothermal crystallization from isothermal data</a> — <span class="muted">J. Therm. Anal. 40, 621–628 (1993) — José A. Martins</span></li>
           </ul>
         </div>
       </div>
@@ -217,10 +259,12 @@
         <div class="card">
           <h3>Beyond the Static Kuhn Length</h3>
           <p class="muted">Conformational substructures and relaxation dynamics in flexible chains (polyethylene).</p>
+          <p>PDF (under evaluation)</a></p>
         </div>
         <div class="card">
-          <h3> What is a Macromolecular Entanglement?</h3>
-          <p class="muted"> Describe .... (in progress).</p>
+          <h3>A Physical Definition of Macromolecular Entanglement</h3>
+          <p class="muted">Review + resubmission with new evidence (plateau modulus, Me in blends, reptation time).</p>
+          <p>PDF (rejected once; revised)</a></p>
         </div>
       </div>
       <p class="muted">These drafts reflect where my head is now; they also explain why my publication count is modest. Depth takes time.</p>
@@ -231,7 +275,7 @@
       <ul>
         <li>Polymer Physics — notes & problem sets</li>
         <li>Crystallization & Rheology — lab handouts</li>
-        <li><a href="https://artigosdemerda.blogspot.com/p/pagina-2.html" target="_blank" rel="noopener">Course materials & research notes</a></li>
+        <li><a href="https://artigosdemerda.blogspot.com/p/pagina-2.html" >Course materials & research notes</a></li>
       </ul>
     </section>
 
@@ -239,11 +283,11 @@
       <h2>Contact</h2>
       <p>
         Email: <a href="mailto:you@example.com">you@example.com</a> • 
-        Scholar: <a href="#" target="_blank" rel="noopener">Google Scholar</a> • 
-        ORCID: <a href="#" target="_blank" rel="noopener">0000-0000-0000-0000</a> • 
-        GitHub: <a href="https://github.com/" target="_blank" rel="noopener">(link)</a>
+        Scholar: <a href="#" >Google Scholar</a> • 
+        ORCID: <a href="#" >0000-0000-0000-0000</a> • 
+        GitHub: <a href="https://github.com/" >(link)</a>
       </p>
-      <a class="cta" href="cv.pdf" target="_blank" rel="noopener">Download CV</a>
+      <a class="cta" href="cv.pdf" >Download CV</a>
     </section>
 
     <footer>
