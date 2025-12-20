@@ -4,218 +4,248 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>José A. Martins — Polymer Physics</title>
-  <meta name="description" content="José — Polymer Physicist" />
+  <meta name="description" content="José A. Martins — Polymer Physics" />
+
   <style>
-    :root {
-      --bg: #f7fafc;
-      --card: #ffffff;
-      --text: #0b1324;
-      --muted: #475569;
-      --accent: #0ea5e9;
-      --link: #0b72cf;
-      --chip: #eef2f7;
-      --border: #e6eaf0;
+    :root{
+      --bg:#f7fafc;
+      --card:#ffffff;
+      --text:#0b1324;
+      --muted:#475569;
+      --accent:#0ea5e9;
+      --link:#0b72cf;
+      --chip:#eef2f7;
+      --border:#e6eaf0;
+      --shadow: 0 10px 26px rgba(0,0,0,0.10);
     }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #0b1220;
-        --card: #0f172a;
-        --text: #e6edf7;
-        --muted: #93a3b8;
-        --accent: #38bdf8;
-        --link: #93c5fd;
-        --chip: #111827;
-        --border: #1f2937;
+
+    @media (prefers-color-scheme: dark){
+      :root{
+        --bg:#0b1220;
+        --card:#0f172a;
+        --text:#e6edf7;
+        --muted:#93a3b8;
+        --accent:#38bdf8;
+        --link:#93c5fd;
+        --chip:#111827;
+        --border:#1f2937;
+        --shadow: 0 10px 26px rgba(0,0,0,0.25);
       }
     }
-    }
-    html, body {
-      margin: 0;
+
+    html, body{
+      margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--text);
+      line-height: 1.6;
       background-color: var(--bg);
-      /* subtle polymer-chain background — tiled SVG of a zig‑zag backbone */
-      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'><defs><pattern id='p' width='140' height='140' patternUnits='userSpaceOnUse'><path d='M10,20 L40,10 L70,30 L100,15 L130,35' fill='none' stroke='%23cdd6e3' stroke-width='1.2' stroke-linecap='round'/><circle cx='10' cy='20' r='1.8' fill='%23cdd6e3'/><circle cx='40' cy='10' r='1.8' fill='%23cdd6e3'/><circle cx='70' cy='30' r='1.8' fill='%23cdd6e3'/><circle cx='100' cy='15' r='1.8' fill='%23cdd6e3'/><circle cx='130' cy='35' r='1.8' fill='%23cdd6e3'/><path d='M10,90 L40,70 L70,95 L100,75 L130,100' fill='none' stroke='%23cdd6e3' stroke-width='1.2' stroke-linecap='round'/><circle cx='10' cy='90' r='1.8' fill='%23cdd6e3'/><circle cx='40' cy='70' r='1.8' fill='%23cdd6e3'/><circle cx='70' cy='95' r='1.8' fill='%23cdd6e3'/><circle cx='100' cy='75' r='1.8' fill='%23cdd6e3'/><circle cx='130' cy='100' r='1.8' fill='%23cdd6e3'/></pattern></defs><rect width='140' height='140' fill='url(%23p)' opacity='0.35'/></svg>");
-      color: var(--text);
-      line-height: 1.6;
     }
-    body {
-      margin: 0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-      background: linear-gradient(180deg, var(--bg), rgba(2,6,23,0.9)), radial-gradient(1200px 800px at 80% -10%, rgba(56,189,248,0.12), transparent 60%);
-      color: var(--text);
-      line-height: 1.6;
+
+    /* Background: keep BOTH, but combined cleanly on body */
+    body{
+      background-image:
+        linear-gradient(180deg, var(--bg), rgba(2,6,23,0.08)),
+        radial-gradient(1200px 800px at 80% -10%, rgba(56,189,248,0.12), transparent 60%),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'><defs><pattern id='p' width='140' height='140' patternUnits='userSpaceOnUse'><path d='M10,20 L40,10 L70,30 L100,15 L130,35' fill='none' stroke='%23cdd6e3' stroke-width='1.2' stroke-linecap='round'/><circle cx='10' cy='20' r='1.8' fill='%23cdd6e3'/><circle cx='40' cy='10' r='1.8' fill='%23cdd6e3'/><circle cx='70' cy='30' r='1.8' fill='%23cdd6e3'/><circle cx='100' cy='15' r='1.8' fill='%23cdd6e3'/><circle cx='130' cy='35' r='1.8' fill='%23cdd6e3'/><path d='M10,90 L40,70 L70,95 L100,75 L130,100' fill='none' stroke='%23cdd6e3' stroke-width='1.2' stroke-linecap='round'/><circle cx='10' cy='90' r='1.8' fill='%23cdd6e3'/><circle cx='40' cy='70' r='1.8' fill='%23cdd6e3'/><circle cx='70' cy='95' r='1.8' fill='%23cdd6e3'/><circle cx='100' cy='75' r='1.8' fill='%23cdd6e3'/><circle cx='130' cy='100' r='1.8' fill='%23cdd6e3'/></pattern></defs><rect width='140' height='140' fill='url(%23p)' opacity='0.22'/></svg>");
+      background-repeat: no-repeat, no-repeat, repeat;
+      background-size: auto, auto, auto;
+      background-attachment: fixed, fixed, fixed;
     }
-    .container { max-width: 980px; margin: 0 auto; padding: 32px 20px 80px; }
-    header { display: flex; gap: 24px; align-items: center; padding: 24px; border: 1px solid var(--border); border-radius: 18px; background: var(--card); box-shadow: 0 10px 30px rgba(0,0,0,0.12); }
-    header img { width: 104px; height: 104px; border-radius: 14px; object-fit: cover; border: 1px solid var(--border); }
-    h1 { font-size: clamp(28px, 3.5vw, 40px); line-height: 1.1; margin: 0; }
-    .subtitle { color: var(--muted); margin-top: 4px; font-size: 15px; }
-    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
-    .chip { font-size: 12px; padding: 6px 10px; border-radius: 999px; background: var(--chip); color: var(--muted); border: 1px solid var(--border); }
-    nav { position: sticky; top: 0; backdrop-filter: saturate(160%) blur(6px); background: color-mix(in srgb, var(--bg) 80%, transparent); border-bottom: 1px solid var(--border); }
-    nav .nav-inner { max-width: 980px; margin: 0 auto; display: flex; gap: 16px; padding: 8px 20px; overflow-x: auto; }
-    nav a { color: var(--link); text-decoration: none; padding: 10px 12px; border-radius: 10px; font-weight: 600; }
-    nav a:hover { background: var(--chip); }
 
-    section { margin-top: 36px; padding: 24px; border: 1px solid var(--border); border-radius: 18px; background: var(--card); box-shadow: 0 10px 26px rgba(0,0,0,0.10); }
-    section h2 { margin: 0 0 12px; font-size: 22px; }
-    .grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
-    .card { border: 1px solid var(--border); border-radius: 14px; padding: 16px; background: linear-gradient(180deg, color-mix(in srgb, var(--card) 92%, transparent), var(--card)); }
-    .muted { color: var(--muted); }
-    .pub { display: grid; gap: 6px; }
-    .pub .title { font-weight: 600; }
-    .pub .meta { font-size: 13px; color: var(--muted); }
+    .container{ max-width: 980px; margin: 0 auto; padding: 32px 20px 80px; }
 
-    .cta { display: inline-flex; align-items: center; gap: 10px; border: 1px solid var(--border); background: var(--chip); color: var(--text); text-decoration: none; padding: 10px 14px; border-radius: 12px; font-weight: 700; }
-    .cta:hover { transform: translateY(-1px); transition: transform .15s ease; }
-    footer { text-align: center; color: var(--muted); margin-top: 28px; font-size: 13px; }
-    nav { position: sticky; top: 0; backdrop-filter: saturate(140%) blur(6px); background: color-mix(in srgb, var(--bg) 85%, transparent); border-bottom: 1px solid var(--border); }
-    code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
-    pre { overflow-x: auto; background: var(--chip); padding: 14px; border-radius: 12px; border: 1px solid var(--border); }
-    .about-block { background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 28px; box-shadow: 0 8px 20px rgba(0,0,0,0.06); }
-    .about-inner { display: grid; gap: 18px; font-size: 15.5px; line-height: 1.7; }
-    .about-inner p { margin: 0; }
-    .about-inner a { color: var(--link); }
-    .intro-line { margin-top: 12px; font-style: italic; }
+    header{
+      display:flex; gap:24px; align-items:center;
+      padding:24px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: var(--card);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    }
+    header img{
+      width:104px; height:104px; border-radius:14px; object-fit:cover;
+      border: 1px solid var(--border);
+    }
+    h1{ font-size: clamp(28px, 3.5vw, 40px); line-height: 1.1; margin: 0; }
+    .subtitle{ color: var(--muted); margin-top: 6px; font-size: 15px; }
+
+    .chips{ display:flex; flex-wrap:wrap; gap:8px; margin-top:14px; }
+    .chip{
+      font-size:12px;
+      padding:6px 10px;
+      border-radius:999px;
+      background: var(--chip);
+      color: var(--muted);
+      border: 1px solid var(--border);
+    }
+
+    nav{
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: saturate(160%) blur(6px);
+      background: color-mix(in srgb, var(--bg) 85%, transparent);
+      border-bottom: 1px solid var(--border);
+    }
+    nav .nav-inner{
+      max-width: 980px;
+      margin: 0 auto;
+      display:flex; gap:16px;
+      padding: 8px 20px;
+      overflow-x: auto;
+    }
+    nav a{
+      color: var(--link);
+      text-decoration: none;
+      padding: 10px 12px;
+      border-radius: 10px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    nav a:hover{ background: var(--chip); }
+
+    section{
+      margin-top: 36px;
+      padding: 24px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: var(--card);
+      box-shadow: var(--shadow);
+    }
+    section h2{ margin: 0 0 12px; font-size: 22px; }
+
+    .grid{ display:grid; gap:16px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+    .card{
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px;
+      background: linear-gradient(180deg, color-mix(in srgb, var(--card) 92%, transparent), var(--card));
+    }
+
+    .muted{ color: var(--muted); }
+
+    ul{ margin: 10px 0 0; padding-left: 18px; }
+    li{ margin: 10px 0; }
+    li .muted{ display:block; margin-top: 4px; font-size: 13px; }
+
+    .cta{
+      display:inline-flex; align-items:center; gap:10px;
+      border: 1px solid var(--border);
+      background: var(--chip);
+      color: var(--text);
+      text-decoration: none;
+      padding: 10px 14px;
+      border-radius: 12px;
+      font-weight: 700;
+    }
+    .cta:hover{ transform: translateY(-1px); transition: transform .15s ease; }
+
+    footer{ text-align:center; color: var(--muted); margin-top: 28px; font-size: 13px; }
+    a{ color: var(--link); }
   </style>
 </head>
+
 <body>
   <nav>
     <div class="nav-inner">
       <a href="#about">About</a>
       <a href="#research">Research</a>
       <a href="#publications">Publications</a>
-      <a href="#publications">Software</a>
+      <a href="#software">Software</a>
       <a href="#teaching">Teaching</a>
+      <a href="#institutional-context">Institutional context</a>
       <a href="#contact">Contact</a>
-      <a href="cv.pdf" >CV</a>
+      <a href="cv.pdf">CV</a>
     </div>
   </nav>
 
-    <!--
-     ===========================================
-       CONTAINER
-     =========================================== 
-    -->
-   <div class="container">
+  <div class="container">
     <header>
       <img src="foto-github.jpeg" alt="Portrait of José" onerror="this.style.display='none'" />
       <div>
         <h1>José A. Martins</h1>
-       <!--  <p class="subtitle">Polymer physicist — simple, curious, persistent</p>  -->
+        <!-- <p class="subtitle">Polymer physicist — simple, curious, persistent</p> -->
         <div class="chips">
           <span class="chip">Polymer crystallization</span>
           <span class="chip">Melt memory</span>
           <span class="chip">Entanglements</span>
           <span class="chip">Rheology</span>
-          <span class="chip">Short‑range order</span>
+          <span class="chip">Short-range order</span>
           <span class="chip">Kuhn segments</span>
           <span class="chip">Gaussianity & non-Gaussianity</span>
-
         </div>
       </div>
     </header>
 
-    <!--
-     ===========================================
-       ABOUT
-     =========================================== 
-    -->
-    <section id="about" class="about-block">
+    <section id="about">
       <h2>About</h2>
-      <div class="about-inner">
-
-        <p>
-          I've graduated in Physics (five years course) at the University of Lisbon. I started my scientific career in a State Laboratory, working with a Van de Graaff generator doing Rutherford backscattering experiments.
-          I entered the polymer field after obtaining a degree in Materials Science (IST — Technical University of Lisbon) and a PhD in Polymer Science and Engineering (University of Minho).
-          Both my Master's Degree and PhD were on the modelling of polymer crystallization.
-        </p>
-
-        <p>
-          After my PhD, I invented and built, with other colleagues, a shear-DTA instrument and started a set of experiments to understand crystallization after shear deformations and the origin of the melt memory effect.
-          Surprisingly, both amorphous and semicrystalline polymers respond similarly to shear deformations applied to the molten state.
-          This result led me to study shear-induced structures and the effect of shear deformations and melt temperature on these structures.
-          I've even estimated their size. However, I didn’t have access to experimental facilities or funding to perform the required studies.
-        </p>
-
-        <p>
-          Around 2012, I turned to molecular dynamics simulations without knowing anything about the subject.
-          I received the assistance of Nuno Micaelo, who helped me set up the first systems and taught me the basics.
-          A key requirement was that the systems should mimic, as closely as possible, the experimental behaviour of the materials.
-          Later, I developed codes to read the trajectory files and analyse them on a Kuhn-segment basis.
-          The first results were obtained through trial and error. Slowly (over about ten years) this work developed into a detailed analysis of melt morphology
-          for entangled and unentangled systems at different temperatures, their crystallization, and their response to shear deformations.
-        </p>
-
-        <p>
-          So far, I’ve studied flexible and semiflexible polymer chains, amorphous polymers, and polymers with different tacticities.
-          Allmost all these results are still unpublished, mainly due to lack of time and to difficulties I’m facing at the institutional level.
-        </p>
-
-        <p class="muted">
-          For context on my position within the institution, see the section <a href="#institutional-context">Institutional context</a> below.
-        </p>
-
-        <p class="muted">
-          NOTE: this page is under construction. 
-        </p>
-        
+      <div class="grid">
+        <div class="card">
+          <p>
+            I've graduated in Physics (five years course) at the University of Lisbon. I started my scientific career in a State Laboratory, working with a Van de Graaff generator doing Rutherford backscattering experiments.
+            I entered the polymer field after obtaining a degree in Materials Science (IST — Technical University of Lisbon) and a PhD in Polymer Science and Engineering (University of Minho).
+            Both my Master's Degree and PhD were on the modelling of polymer crystallization.
+          </p>
+          <p>
+            After my PhD, I invented and built, with other colleagues, a shear-DTA instrument and started a set of experiments to understand crystallization after shear deformations and the origin of the melt memory effect.
+            Surprisingly, both amorphous and semicrystalline polymers respond similarly to shear deformations applied to the molten state.
+            This result led me to study shear-induced structures and the effect of shear deformations and melt temperature on these structures.
+            I've even estimated their size. However, I didn’t have access to experimental facilities or funding to perform the required studies.
+          </p>
+          <p>
+            Around 2012, I turned to molecular dynamics simulations without knowing anything about the subject.
+            I received the assistance of Nuno Micaelo, who helped me set up the first systems and taught me the basics.
+            A key requirement was that the systems should mimic, as closely as possible, the experimental behaviour of the materials.
+            Later, I developed codes to read the trajectory files and analyse them on a Kuhn-segment basis.
+            The first results were obtained through trial and error. Slowly (over about ten years) this work developed into a detailed analysis of melt morphology
+            for entangled and unentangled systems at different temperatures, their crystallization, and their response to shear deformations.
+          </p>
+          <p>
+            So far, I’ve studied flexible and semiflexible polymer chains, amorphous polymers, and polymers with different tacticities.
+            Almost all these results are still unpublished, mainly due to lack of time and to difficulties I’m facing at the institutional level.
+          </p>
+          <p class="muted">
+            For context on my position within the institution, see the section <a href="#institutional-context">Institutional context</a> below.
+          </p>
+          <p class="muted">NOTE: this page is under construction.</p>
+        </div>
       </div>
     </section>
 
-    <!--
-    ===========================================
-      RESEARCH
-    ===========================================
-    -->
     <section id="research">
       <h2>Research</h2>
       <div class="grid">
-      <div class="card">
-      <h3>What is an entanglement?</h3>
+        <div class="card">
+          <h3>What is an entanglement?</h3>
           <p class="muted">
-          They are described as topological constraints or by “slip-links”. Both assume a binary interaction. In my view, topological constraints result from hard-core repulsive
-          interactions and cannot explain the elastic properties demonstrated by entangled polymer chains. For a “slip-link” to exist, one has to consider a binary interaction between chain segments
-          and associate to this interaction a potential energy. For this to occur, one has to look in detail at the morphology of the chain at the atomic scale.
+            They are described as topological constraints or by “slip-links”. Both assume a binary interaction. In my view, topological constraints result from hard-core repulsive
+            interactions and cannot explain the elastic properties demonstrated by entangled polymer chains. For a “slip-link” to exist, one has to consider a binary interaction between chain segments
+            and associate to this interaction a potential energy. For this to occur, one has to look in detail at the morphology of the chain at the atomic scale.
           </p>
-      </div>
-
+        </div>
 
         <div class="card">
           <h3>Melt memory & crystallization</h3>
-          <p class="muted">Kinetics under quiescent and flow. In start-up shear experiments, the viscosity of both semicrystalline and amorphous polymers saturates at steady state, <br>
-            corresponding to a loss of about one third of the initial entanglements. This loss, together with chain orientation, is responsible for the acceleration of <br>
-            crystallization kinetics in semicrystalline polymers. </p>
-        </div>
-        
-        <div class="card">
-        <h3>Short-range order</h3>
-        <p class="muted">
-          This work — “Van der Waals Picture of Liquids, Solids, and Phase Transformations” by David Chandler, John D. Weeks, and Hans C. Andersen,
-          <a href="https://www.science.org/doi/10.1126/science.220.4599.787" target="_blank">(link)</a> —
-          illustrates the role of attractive and repulsive interactions on the system volume and on the local packing of molecules.
-          I have identified the short-range order that explains the experimentally demonstrated “solid-like” behavior in polymer melts.
-          In these melts, as in any other condensed phase, there are density fluctuations. In polymers, they occur when aligned chain segments interact with each other.
-          I have demonstrated that the spatial arrangement of chain segments in these regions is the same as that in the crystalline unit cell of the polymer.
-          It is remarkable that a fluid contains a “seed” with the information on the preferred spatial arrangement of the molecules in the solid state.
+          <p class="muted">
+            Kinetics under quiescent and flow. In start-up shear experiments, the viscosity of both semicrystalline and amorphous polymers saturates at steady state,
+            corresponding to a loss of about one third of the initial entanglements. This loss, together with chain orientation, is responsible for the acceleration of
+            crystallization kinetics in semicrystalline polymers.
           </p>
         </div>
 
-
         <div class="card">
-          <h3> Work in progress </h3>
-       <!--   <h3> Kuhn segments & dynamics</h3>
-          <p class="muted">Conformational substructures, stretched relaxation, anomalous diffusion.</p> -->
+          <h3>Short-range order</h3>
+          <p class="muted">
+            This work — “Van der Waals Picture of Liquids, Solids, and Phase Transformations” by David Chandler, John D. Weeks, and Hans C. Andersen,
+            <a href="https://www.science.org/doi/10.1126/science.220.4599.787" target="_blank" rel="noopener">(link)</a> —
+            illustrates the role of attractive and repulsive interactions on the system volume and on the local packing of molecules.
+            I have identified the short-range order that explains the experimentally demonstrated “solid-like” behavior in polymer melts.
+            In these melts, as in any other condensed phase, there are density fluctuations. In polymers, they occur when aligned chain segments interact with each other.
+            I have demonstrated that the spatial arrangement of chain segments in these regions is the same as that in the crystalline unit cell of the polymer.
+            It is remarkable that a fluid contains a “seed” with the information on the preferred spatial arrangement of the molecules in the solid state.
+          </p>
         </div>
 
-        
-        <div class="card">
-          <h3> Work in progress </h3>
-       <!--   <h3> Kuhn segments & dynamics</h3>
-          <p class="muted">Conformational substructures, stretched relaxation, anomalous diffusion.</p> -->
-        </div>
-
-        
         <div class="card">
           <h3>Instrumentation</h3>
           <p class="muted">Shear DTA; rheometer & DSC calibration; measuring what we think we measure.</p>
@@ -223,229 +253,232 @@
       </div>
     </section>
 
-    <!--
-     ===========================================
-       SELECTED PUBLICATIONS
-     =========================================== 
-    -->
     <section id="publications">
-      <h2>Selected Publications </h2>
-      <!-- <p class="muted">Below are direct links to the PDFs you’ve uploaded, stored in the <code>/papers</code> folder of this site. <br>
-          Author credit shown as <strong>José A. Martins</strong> (preferred format). We’ll append as you upload the remainder to reach 33.</p> -->
+      <h2>Selected Publications</h2>
+
       <div class="grid">
         <div class="card">
           <h3>Crystallization—kinetics, melt memory, shear, short-range order</h3>
           <ul>
-            <li>Short‑range order in polyethylene melts: identification & characterization</a> — <span class="muted">Macromolecules 46, 7977–7988 (2013)<br>
-             <a href="https://pubs.acs.org/doi/10.1021/ma4009934" >(link)</a>  </span></li>
-            <li>Origin of the melt memory effect in polymer crystallization</a> — <span class="muted">Polymer 51, 4185–4194 (2010) <br>
-             <a href="https://www.sciencedirect.com/science/article/abs/pii/S0032386110006099" >(link)</a>  </span></li>
-            <li>Evaluation of the effect of melt memory on shear‑induced crystallization of LDPE</a> — <span class="muted">Macromol. Rapid Commun. 27, 1067 (2006) <br>
-             <a href="https://onlinelibrary.wiley.com/doi/abs/10.1002/marc.200600079" >(link)</a>  </span></li>
-            <li>Saturation of shear‑induced isothermal crystallization; steady state & entanglement–disentanglement transition</a> — <span class="muted">Macromolecules 39, 7626–7634 (2006) <br>
-             <a href="https://pubs.acs.org/doi/abs/10.1021/ma061143u" >(link)</a>  </span></li>
-            <li>Shear‑induced non‑isothermal crystallization of polyethylene</a> — <span class="muted">Polymer 48, 6215–6220 (2007) <br>
-             <a href="https://www.sciencedirect.com/science/article/abs/pii/S0032386107008294" >(link)</a>  </span></li>
-            <li>Evaluation of the sample temperature increase during the quiescent and shear-induced isothermal crystallization of polyethylene</a> — <span class="muted">Polymer 44, 8071–8079 (2003) <br>
-             <a href="https://www.sciencedirect.com/science/article/abs/pii/S0032386103009030" >(link)</a>  </span></li>
-            <li>Non‑isothermal crystallization kinetics with instantaneous nucleation</a> — <span class="muted">Polymer 41, 6875–6884 (2000) <br>
-             <a href="https://www.sciencedirect.com/science/article/abs/pii/S0032386100000355" >(link)</a>  </span></li>
-            <li>The Nonisothermal Crystallization Kinetics of Polypropylene After DSC Calibration on Cooling</a> — <span class="muted">J. Macromol. Sci., Phys. B39, 711–722 (2000) <br>
-             <a href="https://www.tandfonline.com/doi/full/10.1081/MB-100102482" >(link)</a>  </span></li>
-            <li>The isothermal crystallization of engineering polymers — POM and PEEK</a> — <span class="muted">Colloid & Polymer Science 272, 1–16 (1994) <br>
-             <a href="https://link.springer.com/article/10.1007/BF00653305" >(link)</a>  </span></li>
+            <li>
+              Short-range order in polyethylene melts: identification & characterization
+              <span class="muted">Macromolecules 46, 7977–7988 (2013) — <a href="https://pubs.acs.org/doi/10.1021/ma4009934" target="_blank" rel="noopener">DOI/link</a></span>
+            </li>
+            <li>
+              Origin of the melt memory effect in polymer crystallization
+              <span class="muted">Polymer 51, 4185–4194 (2010) — <a href="https://www.sciencedirect.com/science/article/abs/pii/S0032386110006099" target="_blank" rel="noopener">link</a></span>
+            </li>
+            <li>
+              Evaluation of the effect of melt memory on shear-induced crystallization of LDPE
+              <span class="muted">Macromol. Rapid Commun. 27, 1067 (2006) — <a href="https://onlinelibrary.wiley.com/doi/abs/10.1002/marc.200600079" target="_blank" rel="noopener">DOI/link</a></span>
+            </li>
+            <li>
+              Saturation of shear-induced isothermal crystallization; steady state & entanglement–disentanglement transition
+              <span class="muted">Macromolecules 39, 7626–7634 (2006) — <a href="https://pubs.acs.org/doi/abs/10.1021/ma061143u" target="_blank" rel="noopener">DOI/link</a></span>
+            </li>
+            <li>
+              Shear-induced non-isothermal crystallization of polyethylene
+              <span class="muted">Polymer 48, 6215–6220 (2007) — <a href="https://www.sciencedirect.com/science/article/abs/pii/S0032386107008294" target="_blank" rel="noopener">link</a></span>
+            </li>
+            <li>
+              Evaluation of the sample temperature increase during the quiescent and shear-induced isothermal crystallization of polyethylene
+              <span class="muted">Polymer 44, 8071–8079 (2003) — <a href="https://www.sciencedirect.com/science/article/abs/pii/S0032386103009030" target="_blank" rel="noopener">link</a></span>
+            </li>
+            <li>
+              Non-isothermal crystallization kinetics with instantaneous nucleation
+              <span class="muted">Polymer 41, 6875–6884 (2000) — <a href="https://www.sciencedirect.com/science/article/abs/pii/S0032386100000355" target="_blank" rel="noopener">link</a></span>
+            </li>
+            <li>
+              The Nonisothermal Crystallization Kinetics of Polypropylene After DSC Calibration on Cooling
+              <span class="muted">J. Macromol. Sci., Phys. B39, 711–722 (2000) — <a href="https://www.tandfonline.com/doi/full/10.1081/MB-100102482" target="_blank" rel="noopener">DOI/link</a></span>
+            </li>
+            <li>
+              The isothermal crystallization of engineering polymers — POM and PEEK
+              <span class="muted">Colloid & Polymer Science 272, 1–16 (1994) — <a href="https://link.springer.com/article/10.1007/BF00653305" target="_blank" rel="noopener">DOI/link</a></span>
+            </li>
           </ul>
         </div>
 
         <div class="card">
           <h3>Instrumentation, calibration & true sample temperature</h3>
           <ul>
-            <li>Isothermal and nonisothermal crystallization of polymers: Analysis with a shear differential thermal analyzer</a> — <span class="muted">Rev. Sci. Instrum. 76, 105105 (2005) <br>
-             <a href="https://pubs.aip.org/aip/rsi/article-abstract/76/10/105105/366467/Isothermal-and-nonisothermal-crystallization-of?redirectedFrom=fulltext" >(link)</a>  </span></li>
-            <li>Temperature calibration of a parallel‑plate rheometer; thermal lags during solidification</a> — <span class="muted">Thermochim. Acta 413, 101–110 (2004) <br>
-             <a href=" " >(link)</a>  </span></li>
-            <li>True sample temperatures in isothermal DSC and their effect on overall crystallization kinetics</a> — <span class="muted">J. Appl. Polym. Sci. 91, 125–131 (2004) <br>
-             <a href=" " >(link)</a>  </span></li>
-            <li>Temperature calibration on cooling of DSC</a> — <span class="muted">Thermochim. Acta 332, 179–188 (1999) </span></li>
-            <li>Evaluation of calibration errors on cooling of DSC (different standards)</a> — <span class="muted">Thermochim. Acta 420, 155–161 (2004) <br>
-             <a href=" " >(link)</a>  </span></li>
-            <li>The role of the temperature errors in DSC scans on the prediction of the average density of nuclei in polymers crystallized under quiescent conditions</a> — <span class="muted">Thermochim. Acta 391, 97–106 (2002) <br>
-             <a href="https://www.sciencedirect.com/science/article/abs/pii/S0040603102001673" >(link)</a>  </span></li>
-            <!--  <li>Erratum & further comments on temperature correction of DMA/TMA</a> — <span class="muted">Thermochim. Acta 369, 175–178 (2001) </span></li>  -->
+            <li>
+              Isothermal and nonisothermal crystallization of polymers: Analysis with a shear differential thermal analyzer
+              <span class="muted">Rev. Sci. Instrum. 76, 105105 (2005) — <a href="https://pubs.aip.org/aip/rsi/article-abstract/76/10/105105/366467/Isothermal-and-nonisothermal-crystallization-of?redirectedFrom=fulltext" target="_blank" rel="noopener">link</a></span>
+            </li>
+            <li>
+              Temperature calibration of a parallel-plate rheometer; thermal lags during solidification
+              <span class="muted">Thermochim. Acta 413, 101–110 (2004)</span>
+            </li>
+            <li>
+              True sample temperatures in isothermal DSC and their effect on overall crystallization kinetics
+              <span class="muted">J. Appl. Polym. Sci. 91, 125–131 (2004)</span>
+            </li>
+            <li>
+              Temperature calibration on cooling of DSC
+              <span class="muted">Thermochim. Acta 332, 179–188 (1999)</span>
+            </li>
+            <li>
+              Evaluation of calibration errors on cooling of DSC (different standards)
+              <span class="muted">Thermochim. Acta 420, 155–161 (2004)</span>
+            </li>
+            <li>
+              The role of the temperature errors in DSC scans on the prediction of the average density of nuclei in polymers crystallized under quiescent conditions
+              <span class="muted">Thermochim. Acta 391, 97–106 (2002) — <a href="https://www.sciencedirect.com/science/article/abs/pii/S0040603102001673" target="_blank" rel="noopener">link</a></span>
+            </li>
           </ul>
         </div>
 
         <div class="card">
           <h3>Nucleation density, spherulites & rotational molding</h3>
           <ul>
-            <li>Prediction of spherulite size in rotationally molded polypropylene</a> — <span class="muted">J. Macromol. Sci., Phys. B42, 367–385 (2003) <br>
-             <a href="https://www.tandfonline.com/doi/full/10.1081/MB-120017125" >(link)</a>  </span></li>
-            <li>Evaluation of instantaneous nucleation density</a> — <span class="muted">Polymer 43, 3999–4007 (2002) <br>
-             <a href="https://www.sciencedirect.com/science/article/abs/pii/S0032386102002215" >(link)</a>  </span></li>
-
+            <li>
+              Prediction of spherulite size in rotationally molded polypropylene
+              <span class="muted">J. Macromol. Sci., Phys. B42, 367–385 (2003) — <a href="https://www.tandfonline.com/doi/full/10.1081/MB-120017125" target="_blank" rel="noopener">DOI/link</a></span>
+            </li>
+            <li>
+              Evaluation of instantaneous nucleation density
+              <span class="muted">Polymer 43, 3999–4007 (2002) — <a href="https://www.sciencedirect.com/science/article/abs/pii/S0032386102002215" target="_blank" rel="noopener">link</a></span>
+            </li>
           </ul>
         </div>
 
         <div class="card">
           <h3>Entanglements — theory & physical basis</h3>
           <ul>
-            <li>Analysis of the Adequacy of the Representation of Entanglement Effects by Chain Loops</a> — <span class="muted">Macromol. Theory Simul. 19, 360–369 (2010) <br>
-             <a href="https://onlinelibrary.wiley.com/doi/abs/10.1002/mats.201000005" >(link)</a>  </span></li>
-            <li>Toward a physical definition of entanglements</a> — <span class="muted">J. Macromol. Sci., Phys. 50, 769–794 (2011) <br>
-             <a href="https://www.tandfonline.com/doi/full/10.1080/00222341003785151" >(link)</a>  </span></li>
+            <li>
+              Analysis of the Adequacy of the Representation of Entanglement Effects by Chain Loops
+              <span class="muted">Macromol. Theory Simul. 19, 360–369 (2010) — <a href="https://onlinelibrary.wiley.com/doi/abs/10.1002/mats.201000005" target="_blank" rel="noopener">DOI/link</a></span>
+            </li>
+            <li>
+              Toward a physical definition of entanglements
+              <span class="muted">J. Macromol. Sci., Phys. 50, 769–794 (2011) — <a href="https://www.tandfonline.com/doi/full/10.1080/00222341003785151" target="_blank" rel="noopener">DOI/link</a></span>
+            </li>
           </ul>
         </div>
 
         <div class="card">
           <h3>Flow activation volume & rheology</h3>
           <ul>
-            <li>Flow Activation Volume in Composites of Polystyrene and Multiwall Carbon Nanotubes with and without Functionalization</a> — <span class="muted">Macromolecules (2011) <br>
-            <a href="https://pubs.acs.org/doi/abs/10.1021/ma201819g" >(link)</a>  </span></li>
-            <li>Flow activation volume of polystyrene/multiwall carbon nanotubes composites</a> — <span class="muted">Polymer 52, 5149–5155 (2011) <br>
-            <a href="https://www.sciencedirect.com/science/article/abs/pii/S0032386111007816" >(link)</a>  </span></li>
-            <li>What is the flow activation volume of entangled polymer melts?</a> — <span class="muted">Colloid Polym. Sci. 290, 23–29 (2012) <br>
-            <a href="https://link.springer.com/article/10.1007/s00396-011-2519-4" >(link)</a>  </span></li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3>Others</h3>
-          <ul>           
-        <!--    <li>Crystallization behaviour of polyamide‑based SiO₂ nanocomposites</a> — <span class="muted">Composites Part B 36, 51–59 (2005) <br>
-            <a href=" " >(link)</a>  </span></li> </span></li> -->
-            <li>Optical properties of injection‑molded PS scintillators II: dopant distribution</a> — <span class="muted">J. Appl. Polym. Sci. 88, 2714–2718 (2003) <br>
-            <a href=" " >(link)</a>  </span></li>
-            <li>Optical properties of injection‑molded PS scintillators I: processing & optical properties</a> — <span class="muted">J. Appl. Polym. Sci. 88, 2706–2713 (2003) <br>
-            <a href="" >(link)</a> </span></li>
-       <!--     <li>Dyeing of PA6.6 fibers: solvent & temperature effects on thermal properties</a> — <span class="muted">J. Therm. Anal. Calorim. 74, 749–759 (2003) <br>
-              </span></li> -->
+            <li>
+              Flow Activation Volume in Composites of Polystyrene and Multiwall Carbon Nanotubes with and without Functionalization
+              <span class="muted">Macromolecules (2011) — <a href="https://pubs.acs.org/doi/abs/10.1021/ma201819g" target="_blank" rel="noopener">DOI/link</a></span>
+            </li>
+            <li>
+              Flow activation volume of polystyrene/multiwall carbon nanotubes composites
+              <span class="muted">Polymer 52, 5149–5155 (2011) — <a href="https://www.sciencedirect.com/science/article/abs/pii/S0032386111007816" target="_blank" rel="noopener">link</a></span>
+            </li>
+            <li>
+              What is the flow activation volume of entangled polymer melts?
+              <span class="muted">Colloid Polym. Sci. 290, 23–29 (2012) — <a href="https://link.springer.com/article/10.1007/s00396-011-2519-4" target="_blank" rel="noopener">DOI/link</a></span>
+            </li>
           </ul>
         </div>
 
         <div class="card">
           <h3>Earlier thermal analysis & methodology</h3>
           <ul>
-            <li>Isothermal & non‑isothermal spherulite growth parameters from OM & DSC</a> — <span class="muted">J. Therm. Anal. 40, 629–636 (1993) <br>
-               <a href="https://link.springer.com/article/10.1007/BF02546633" >(link)</a> </span></li>
-            <li>Prediction of POM non‑isothermal crystallization from isothermal data</a> — <span class="muted">J. Therm. Anal. 40, 621–628 (1993)  <a href="https://link.springer.com/article/10.1007/BF02546632" >(link)</a> </span></li>
+            <li>
+              Isothermal & non-isothermal spherulite growth parameters from OM & DSC
+              <span class="muted">J. Therm. Anal. 40, 629–636 (1993) — <a href="https://link.springer.com/article/10.1007/BF02546633" target="_blank" rel="noopener">DOI/link</a></span>
+            </li>
+            <li>
+              Prediction of POM non-isothermal crystallization from isothermal data
+              <span class="muted">J. Therm. Anal. 40, 621–628 (1993) — <a href="https://link.springer.com/article/10.1007/BF02546632" target="_blank" rel="noopener">DOI/link</a></span>
+            </li>
           </ul>
         </div>
-        
       </div>
-      <!-- <p class="muted">We’ll continue appending entries here as you upload the rest (target total: 33). If you prefer reverse‑chronological order or journal‑grouping instead of themes,  <br>
-          say the word and I’ll switch the layout.</p> -->
     </section>
 
-     <!-- 
-     ===========================================
-       INSTITUTIONAL CONTEXT
-     ===========================================  
-    -->
-    <section id="institutional-context" class="about-block">
-  <h2>Institutional context</h2>
-  <div class="about-inner">
-
-    <p>
-    I created this page to promote my scientific work after the page I had on my department’s site was closed and my name was removed from the department webpage.
-  If you visit <a href="https://www.dep.uminho.pt" target="_blank">www.dep.uminho.pt</a>, the site of the Department of Polymer Engineering, 
-  you will find a department without people, an “Internacionalização” (Internationalization) tab, but no English version of the site.
-
-
-    <p>
-      For many years, I have raised concerns, through other channels, about what I consider to be serious problems within my working institution,
-      including issues of competence and academic integrity.
-      In particular, I have expressed concerns about the appropriation of scientific work authored by others and published in high-impact journals (Nature, Science) 
-      being used in applications for funding from a state agency.
-      A formal complaint has been submitted to the Attorney General's Office.
-    </p>
-
-    <p>
-      My position has affected my personal life and my career within the institution, and it is also one of the reasons for the difficulties I have faced in developing my work.
-      To illustrate, I applied for Habilitation proofs. In addition to three pedagogical texts given freely to students (one in Polymer Physics, another in Thermodynamics of Materials, 
-      and one on Python recipes for treating experimental results on polymers, this one co-authored), each around 200 pages, I submitted a lesson, around 100 pages, 
-      with a compilation of some of my unpublished work, specifically devoted to address the physical nature of entanglements. <br>
-      
-      My request was denied by six jury members — three from external institutions — three without knowledge of polymers, the other three more focused on Polymer Processing, with 
-      some knowledge of general Polymer Science, but none with knowledge of Polymer Physics.
-    </p>
-
-  <!--  <p class="muted">
-      These notes are included here to give context to my publication record and current circumstances.
-    </p>   -->
-
-  </div>
-</section>
-
-
-    <!--
-     ===========================================
-       WORK IN PROGRESS 
-     ===========================================  
-    -->
-    <section id="works-in-progress"">
-     <h2>Works in progress</h2>
-   <!--    <div class="grid">
+    <section id="software">
+      <h2>Software Repository</h2>
+      <div class="grid">
         <div class="card">
-          <h3>Fortran Codes </h3>
-          <p> 
-            Conformational substructures and relaxation dynamics in flexible chains (polyethylene).
+          <h3>Fortran codes</h3>
+          <p class="muted">(coming soon)</p>
+          <p>
+            Executable and input data files to quantify heterogeneities (ACS, RCS and CE) in linear polymer chains.
           </p>
-          </div>
-         
-        <div class="card">
-          <h3>Python Codes</h3>
-          <p
-            </p> 
-    </div>
-      </div>  -->
-        </section>
-
-    <!--
-     ===========================================
-       Sofware 
-     ===========================================  
-    --> 
-    <section id="Software">
-      <h2>Sofware Repository</h2>
-        <div class="grid">
-        <div class="card">
-          <h3>Fortran Codes </h3>
-          <p> 
-            (comming soon) Executable file and input data files to quantify the heterogeneities (ACS, RCS and CE) in linear polymer chains.
+          <p class="muted">
+            Basics: The code reads LAMMPS <code>.dump</code> or <code>.pdb</code> coordinate files, wrapped or unwrapped.
+            Files are placed in folders <code>COORD</code> or <code>COORDPDB</code>, respectively.
+            Two input files are required: one describing the system (number of atoms, atoms per chain, chain types, atom types, atoms per repeat unit, pendant groups per repeat unit, and number of atoms per pendant group),
+            and another specifying coordinate type, wrapping, and evaluation options (default characteristic ratio vs. frame-by-frame, RDF/structure factor/orientational correlations, local ACS analysis, short-range order identification,
+            and aggregation rules based on relative orientation and separation distance).
           </p>
-          </div>
-         
+          <!-- Example links once you upload files:
+          <p><a href="software/acs_rcs_ce.f90">acs_rcs_ce.f90</a></p>
+          <p><a href="software/readme.txt">readme.txt</a></p>
+          -->
+        </div>
+
         <div class="card">
-          <h3>Python Codes</h3>
-          <p> 
-            (comming soon)
-            </p>
-          </div>
-    
+          <h3>Python codes</h3>
+          <p class="muted">(coming soon)</p>
+          <!-- Example:
+          <p><a href="software/analysis.py">analysis.py</a></p>
+          -->
+        </div>
+
+        <div class="card">
+          <h3>Binary releases</h3>
+          <p class="muted">
+            I will publish compiled executables as GitHub Releases (recommended) rather than direct downloads from the website.
+          </p>
+          <!-- Replace with your repo release link later:
+          <p><a href="https://github.com/USER/REPO/releases" target="_blank" rel="noopener">Releases</a></p>
+          -->
+        </div>
+      </div>
     </section>
-     
-     
+
     <section id="teaching">
       <h2>Teaching & Materials</h2>
       <ul>
         <li>Polymer Physics — notes & problem sets</li>
         <li>Crystallization & Rheology — lab handouts</li>
-        <li> Course materials & research notes</li>
+        <li>Course materials & research notes</li>
       </ul>
     </section>
 
+    <section id="institutional-context">
+      <h2>Institutional context</h2>
+      <div class="grid">
+        <div class="card">
+          <p>
+            I created this page to promote my scientific work after the page I had on my department’s site was closed and my name was removed from the department webpage.
+            If you visit <a href="https://www.dep.uminho.pt" target="_blank" rel="noopener">www.dep.uminho.pt</a>, the site of the Department of Polymer Engineering,
+            you will find a department without people, an “Internacionalização” (Internationalization) tab, but no English version of the site.
+          </p>
 
+          <p>
+            For many years, I have raised concerns, through other channels, about what I consider to be serious problems within my working institution,
+            including issues of competence and academic integrity. In particular, I have expressed concerns about the appropriation of scientific work authored by others and
+            published in high-impact journals (Nature, Science) being used in applications for funding from a state agency.
+            A formal complaint has been submitted to the Attorney General's Office.
+          </p>
+
+          <p>
+            My position has affected my personal life and my career within the institution, and it is also one of the reasons for the difficulties I have faced in developing my work.
+            To illustrate, I applied for Habilitation proofs. In addition to three pedagogical texts given freely to students (one in Polymer Physics, another in Thermodynamics of Materials,
+            and one on Python recipes for treating experimental results on polymers, this one co-authored), each around 200 pages, I submitted a lesson, around 100 pages,
+            with a compilation of some of my unpublished work, specifically devoted to addressing the physical nature of entanglements.
+            My request was denied by six jury members — three from external institutions — three without knowledge of polymers, and three more focused on Polymer Processing,
+            with some knowledge of general Polymer Science, but none with knowledge of Polymer Physics.
+          </p>
+        </div>
+      </div>
+    </section>
 
     <section id="contact">
       <h2>Contact</h2>
       <p>
-        <!--Email: <a href="mailto:you@example.com">you@example.com</a> • -->
-        Email:  jamartins at uminho.pt  • 
-        <!-- Scholar: <a href="#" >Google Scholar</a> •  -->
-        ORCID: <a href="https://orcid.org/0000-0003-1164-8411" target="_blank" rel="noopener">0000-0003-1164-8411</a> • 
-        GitHub: <a href="https://joseapmartins.github.io/" >(link)</a>
+        Email: jamartins at uminho.pt •
+        ORCID: <a href="https://orcid.org/0000-0003-1164-8411" target="_blank" rel="noopener">0000-0003-1164-8411</a> •
+        GitHub: <a href="https://joseapmartins.github.io/" target="_blank" rel="noopener">(link)</a>
       </p>
-      <a class="cta" href="cv.pdf" >Download CV</a>
+      <a class="cta" href="cv.pdf">Download CV</a>
     </section>
 
     <footer>
