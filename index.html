@@ -524,6 +524,7 @@
     </header>
 
     <!-- FEATURED PAPER -->
+<!-- FEATURED PAPER -->
     <section id="featured">
       <div class="section-label">Featured paper · J. Chem. Phys. 2025</div>
       <div class="featured-card">
@@ -531,20 +532,32 @@
           <div class="journal-tag">The Journal of Chemical Physics</div>
           <h2>Beyond the Kuhn Segment: Conformational Substructures and Relaxation Dynamics in Flexible Chains</h2>
           <p>
-            What is a statistical segment? Polymer models — from the random coil to reptation theory — are built upon them.
-            The random coil picture treats the chain as a succession of identical, uncorrelated segments behaving as Gaussian (entropic) springs.
-          </p>
+            What is a statistical segment? Polymer chains are described in terms of statistical segments, and models &mdash; from
+        the random coil to reptation theory &mdash; are built upon them. The random coil picture treats the chain as a
+        succession of <em>identical, uncorrelated</em> segments, each behaving as a Gaussian (entropic) spring.
+		  </p>
           <p>
-            This work shows that the <strong>minimal statistical segment is the Kuhn segment</strong>, and that the monomer-based
-            segment <em>b</em> used by Doi &amp; Edwards is <strong>not statistical</strong> at local length scales —
-            Gaussian, entropic-spring behaviour emerges only for blocks spanning <em>several</em> Kuhn segments.
-          </p>
-          <p>
-            Beyond this, Kuhn segments fall into three distinct populations — <strong>Aligned Chain Segments (ACS)</strong>,
-            <strong>Random Conformational Sequences (RCS)</strong>, and <strong>Chain Ends (CE)</strong> — each with its own
-            translational dynamics and orientational relaxation. ACS relax slowly with a strongly stretched exponential
-            (β ≈ 0.5); RCS and CE relax faster (β ≈ 0.7). This heterogeneity provides a direct molecular interpretation
-            of the stretched-exponential relaxation universally observed in polymer melts.
+        I show that the <strong>minimal statistical segment is the Kuhn segment</strong>, and that the monomer-based
+        statistical segment <em>b</em> used by Doi &amp; Edwards and others is <strong>not statistical</strong> at
+        local length scales &mdash; its length falls below the persistence length. The minimal entropic spring with
+        mild Gaussianity requires at least <strong>two Kuhn segments</strong>; the full Gaussian regime requires
+        blocks spanning at least <strong>ten</strong>.
+	      </p>
+		  <p>
+        Based on a probabilistic classification of backbone conformations, Kuhn segments are not all identical,
+        as assumed by all existing theories. They fall into three distinct populations:
+        <strong>Aligned Chain Segments</strong> (ACS, red) &mdash; locally extended, slow-relaxing, interacting
+        with neighbouring ACS to form <strong>Local Ordered Regions</strong> (LOR) in the melt, present even in
+        atactic polymers; <strong>Random Conformational Sequences</strong> (RCS, blue) &mdash; coiled segments
+        connecting two ACS, with greater conformational freedom; and <strong>Chain Ends</strong> (CE, orange),
+        which behave similarly to RCS but are bounded by a single ACS.
+         </p>
+         <p>
+        Because ACS are aligned and interact with neighbouring segments, they relax orientationally an order of
+        magnitude more slowly than RCS and CE, with stretched-exponential decay
+        (&beta;&nbsp;&asymp;&nbsp;0.5). This heterogeneity provides a direct molecular interpretation of the
+        stretched-exponential relaxation universally observed in polymer melts, where &beta; encodes the
+        cooperativity of conformational rearrangements at the Kuhn scale.
           </p>
           <div class="paper-links">
             <a class="paper-link" href="https://doi.org/10.1063/5.0315484" target="_blank" rel="noopener">
@@ -559,8 +572,13 @@
           </div>
         </div>
         <div class="featured-figure">
-          <img src="Figure1A.png" alt="Figure 1A: ACS, RCS and CE populations in a polymer chain" />
-          <div class="fig-caption">Fig. 1A — ACS (red), RCS (blue), and CE (orange) populations in a representative chain configuration</div>
+          <img src="Figure1A_lor.png" alt="Figure 1A: ACS, RCS and CE populations in a polymer chain" />
+          <div class="fig-caption">
+			Figure: Mosaic model of a single polyethylene chain (atomistic MD simulation).
+        ACS (red) interact with neighbouring ACS to form Local Ordered Regions (LOR-drawing).
+        RCS (blue): coiled segments connecting ACS. CE (orange): chain ends.
+        For more details on LOR see also <a href="https://doi.org/10.1021/ma4009934" target="_blank" rel="noopener">doi:10.1021/ma4009934</a>.</em>
+		  </div>
         </div>
       </div>
     </section>
