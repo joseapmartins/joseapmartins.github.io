@@ -45,7 +45,6 @@
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -57,7 +56,6 @@
       font-weight: 300;
     }
 
-    /* Subtle dot-grid background */
     body::before {
       content: '';
       position: fixed;
@@ -69,7 +67,6 @@
       z-index: 0;
     }
 
-    /* Warm radial glow top-right */
     body::after {
       content: '';
       position: fixed;
@@ -141,9 +138,7 @@
       gap: 36px;
       align-items: start;
     }
-    .portrait-wrap {
-      position: relative;
-    }
+    .portrait-wrap { position: relative; }
     .portrait-wrap img {
       width: 120px;
       height: 120px;
@@ -166,7 +161,6 @@
       font-size: 36px;
       color: var(--faint);
     }
-    .header-text {}
     h1 {
       font-family: 'EB Garamond', Georgia, serif;
       font-size: clamp(32px, 4.5vw, 52px);
@@ -202,9 +196,7 @@
     }
 
     /* ── SECTION ── */
-    section {
-      margin-top: 48px;
-    }
+    section { margin-top: 48px; }
     .section-label {
       font-family: 'DM Sans', sans-serif;
       font-size: 11px;
@@ -232,18 +224,13 @@
       margin-bottom: 16px;
     }
 
-    /* ── CARDS ── */
+    /* ── GENERIC CARD ── */
     .card {
       background: var(--card);
       border: 1px solid var(--rule);
       border-radius: 16px;
       padding: 24px 28px;
       box-shadow: var(--shadow-sm);
-    }
-    .card-grid {
-      display: grid;
-      gap: 16px;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     }
     .card h3 {
       font-family: 'EB Garamond', serif;
@@ -252,12 +239,39 @@
       color: var(--text);
       margin-bottom: 10px;
     }
-    .card p {
+    .card p { font-size: 14.5px; color: var(--muted); line-height: 1.7; }
+    .card p + p { margin-top: 12px; }
+
+    /* ── RESEARCH THEME CARDS — single column, featured-weight ── */
+    .research-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .research-card {
+      background: var(--card);
+      border: 1px solid var(--rule);
+      border-radius: 20px;
+      padding: 32px 36px;
+      box-shadow: var(--shadow-md);
+    }
+    .research-card h3 {
+      font-family: 'EB Garamond', serif;
+      font-size: 22px;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--rule);
+    }
+    .research-card p {
       font-size: 14.5px;
       color: var(--muted);
-      line-height: 1.7;
+      line-height: 1.8;
     }
-    .card p + p { margin-top: 12px; }
+    .research-card p + p { margin-top: 12px; }
+    .research-card a { color: var(--accent); text-decoration: none; }
+    .research-card a:hover { text-decoration: underline; }
 
     /* ── FEATURED PAPER ── */
     .featured-card {
@@ -271,9 +285,7 @@
       grid-template-columns: 1fr 280px;
       gap: 0;
     }
-    .featured-body {
-      padding: 36px 40px;
-    }
+    .featured-body { padding: 36px 40px; }
     .featured-body .journal-tag {
       display: inline-flex;
       align-items: center;
@@ -289,21 +301,9 @@
       padding: 4px 12px;
       margin-bottom: 20px;
     }
-    .featured-body h2 {
-      font-size: 22px;
-      line-height: 1.3;
-      margin-bottom: 20px;
-    }
-    .featured-body p {
-      font-size: 14.5px;
-      color: var(--muted);
-      line-height: 1.75;
-      margin-bottom: 14px;
-    }
-    .featured-body strong {
-      font-weight: 500;
-      color: var(--text);
-    }
+    .featured-body h2 { font-size: 22px; line-height: 1.3; margin-bottom: 20px; }
+    .featured-body p { font-size: 14.5px; color: var(--muted); line-height: 1.75; margin-bottom: 14px; }
+    .featured-body strong { font-weight: 500; color: var(--text); }
     .featured-figure {
       border-left: 1px solid var(--rule);
       background: color-mix(in srgb, var(--chip-bg) 60%, transparent);
@@ -348,9 +348,34 @@
       text-decoration: none;
       transition: background 0.15s;
     }
-    .paper-link:hover {
-      background: color-mix(in srgb, var(--accent) 15%, transparent);
+    .paper-link:hover { background: color-mix(in srgb, var(--accent) 15%, transparent); }
+
+    /* ── SUBMITTED CARD ── */
+    .submitted-card {
+      background: var(--card);
+      border: 1px solid var(--rule);
+      border-radius: 20px;
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
     }
+    .submitted-body { padding: 36px 40px; }
+    .submitted-body .journal-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: color-mix(in srgb, var(--accent) 10%, transparent);
+      border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
+      border-radius: 999px;
+      padding: 4px 12px;
+      margin-bottom: 20px;
+    }
+    .submitted-body h2 { font-size: 22px; line-height: 1.3; margin-bottom: 20px; }
+    .submitted-body p { font-size: 14.5px; color: var(--muted); line-height: 1.75; margin-bottom: 14px; }
 
     /* ── PUBLICATIONS ── */
     .pub-group { margin-bottom: 32px; }
@@ -380,34 +405,16 @@
       min-width: 36px;
       letter-spacing: 0.03em;
     }
-    .pub-content {}
-    .pub-title {
-      font-size: 14.5px;
-      font-weight: 400;
-      color: var(--text);
-      line-height: 1.5;
-    }
-    .pub-meta {
-      font-size: 12.5px;
-      color: var(--faint);
-      margin-top: 4px;
-    }
-    .pub-meta a {
-      color: var(--accent);
-      text-decoration: none;
-    }
+    .pub-title { font-size: 14.5px; font-weight: 400; color: var(--text); line-height: 1.5; }
+    .pub-meta { font-size: 12.5px; color: var(--faint); margin-top: 4px; }
+    .pub-meta a { color: var(--accent); text-decoration: none; }
     .pub-meta a:hover { text-decoration: underline; }
 
     /* ── ABOUT ── */
-    .about-text p {
-      font-size: 15px;
-      color: var(--muted);
-      line-height: 1.8;
-      margin-bottom: 14px;
-    }
+    .about-text p { font-size: 15px; color: var(--muted); line-height: 1.8; margin-bottom: 14px; }
     .about-text p:last-child { margin-bottom: 0; }
 
-    /* ── TEACHING / SOFTWARE ── */
+    /* ── TEACHING ── */
     .simple-list { list-style: none; }
     .simple-list li {
       padding: 12px 0;
@@ -425,10 +432,7 @@
       align-items: center;
       margin-bottom: 20px;
     }
-    .contact-item {
-      font-size: 14px;
-      color: var(--muted);
-    }
+    .contact-item { font-size: 14px; color: var(--muted); }
     .contact-item a { color: var(--accent); text-decoration: none; }
     .contact-item a:hover { text-decoration: underline; }
     .sep { color: var(--rule); }
@@ -456,12 +460,7 @@
       border-radius: 12px;
       padding: 24px 28px;
     }
-    .inst-card p {
-      font-size: 14.5px;
-      color: var(--muted);
-      line-height: 1.75;
-      margin-bottom: 12px;
-    }
+    .inst-card p { font-size: 14.5px; color: var(--muted); line-height: 1.75; margin-bottom: 12px; }
     .inst-card p:last-child { margin-bottom: 0; }
 
     /* ── FOOTER ── */
@@ -483,6 +482,8 @@
       .featured-card { grid-template-columns: 1fr; }
       .featured-figure { border-left: none; border-top: 1px solid var(--rule); padding: 20px; }
       .featured-figure img { max-width: 180px; }
+      .research-card { padding: 24px 20px; }
+      .submitted-body, .featured-body { padding: 24px 20px; }
     }
   </style>
 </head>
@@ -518,89 +519,78 @@
           <span class="chip">Rheology</span>
           <span class="chip">Short-range order</span>
           <span class="chip">Kuhn segments</span>
-          <span class="chip">Gaussianity & non-Gaussianity</span>
-		  <span class="chip">Tsallis entropy & q-Gaussian</span>
-     </div>
+          <span class="chip">Gaussianity &amp; non-Gaussianity</span>
+          <span class="chip">Tsallis entropy &amp; q-Gaussian</span>
+        </div>
       </div>
     </header>
 
-<!-- CURRENT WORK -->
-<!--  -->
+    <!-- JUST SUBMITTED -->
     <section id="submitted">
-      <div class="section-label"> Just submitted arXiv 2026</div>
+      <div class="section-label">Just submitted · arXiv 2026</div>
       <div class="submitted-card">
         <div class="submitted-body">
           <div class="journal-tag">arXiv</div>
           <h2>Beyond Gaussian Statistics in Polymer Melts: Statistical Masking of Persistent Local Constraints</h2>
-          <p>
-           In a momment ... 
-		  </p>
-        
-		 <div class="paper-links">
-           <a class="paper-link" href="https://arxiv.org/abs/xxxx.xxxx" target="_blank" rel="noopener">
+          <p>In a moment&hellip;</p>
+          <div class="paper-links">
+            <a class="paper-link" href="https://arxiv.org/abs/xxxx.xxxx" target="_blank" rel="noopener">
               arXiv:xxxxx.xxxxx
             </a>
-            </div>
+          </div>
         </div>
       </div>
     </section>
-	  
+
     <!-- FEATURED PAPER -->
-<!-- FEATURED PAPER -->
     <section id="featured">
-      <div class="section-label">Recently published · J. Chem. Phys. 2026 </div>
+      <div class="section-label">Recently published · J. Chem. Phys. 2026</div>
       <div class="featured-card">
         <div class="featured-body">
           <div class="journal-tag">The Journal of Chemical Physics</div>
           <h2>Beyond the Kuhn Segment: Conformational Substructures and Relaxation Dynamics in Flexible Chains</h2>
           <p>
-            What is a statistical segment? Polymer chains are described in terms of statistical segments, and models &mdash; from
-        the random coil to reptation theory &mdash; are built upon them. The random coil picture treats the chain as a
-        succession of <em>identical, uncorrelated</em> segments, each behaving as a Gaussian (entropic) spring.
-		  </p>
+            What is a statistical segment? Polymer chains are described in terms of statistical segments, and models &mdash;
+            from the random coil to reptation theory &mdash; are built upon them. The random coil picture treats the chain as a
+            succession of <em>identical, uncorrelated</em> segments, each behaving as a Gaussian (entropic) spring.
+          </p>
           <p>
-        I show that the <strong>minimal statistical segment is the Kuhn segment</strong>, and that the monomer-based
-        statistical segment <em>b</em> used by Doi &amp; Edwards and others is <strong>not statistical</strong> at
-        local length scales &mdash; its length falls below the persistence length. The minimal entropic spring with
-        mild Gaussianity requires at least <strong>two Kuhn segments</strong>; the full Gaussian regime requires
-        blocks spanning at least <strong>ten</strong>.
-	      </p>
-		  <p>
-        Based on a probabilistic classification of backbone conformations, Kuhn segments are not all identical,
-        as assumed by all existing theories. They fall into three distinct populations:
-        <strong>Aligned Chain Segments</strong> (ACS, red) &mdash; locally extended, slow-relaxing, interacting
-        with neighbouring ACS to form <strong>Local Ordered Regions</strong> (LOR) in the melt, present even in
-        atactic polymers; <strong>Random Conformational Sequences</strong> (RCS, blue) &mdash; coiled segments
-        connecting two ACS, with greater conformational freedom; and <strong>Chain Ends</strong> (CE, orange),
-        which behave similarly to RCS but are bounded by a single ACS.
-         </p>
-         <p>
-        Because ACS are aligned and interact with neighbouring segments, they relax orientationally an order of
-        magnitude more slowly than RCS and CE, with stretched-exponential decay
-        (&beta;&nbsp;&asymp;&nbsp;0.5). This heterogeneity provides a direct molecular interpretation of the
-        stretched-exponential relaxation universally observed in polymer melts, where &beta; encodes the
-        cooperativity of conformational rearrangements at the Kuhn scale.
+            I show that the <strong>minimal statistical segment is the Kuhn segment</strong>, and that the monomer-based
+            statistical segment <em>b</em> used by Doi &amp; Edwards and others is <strong>not statistical</strong> at
+            local length scales &mdash; its length falls below the persistence length. The minimal entropic spring with
+            mild Gaussianity requires at least <strong>two Kuhn segments</strong>; the full Gaussian regime requires
+            blocks spanning at least <strong>ten</strong>.
+          </p>
+          <p>
+            Based on a probabilistic classification of backbone conformations, Kuhn segments are not all identical,
+            as assumed by all existing theories. They fall into three distinct populations:
+            <strong>Aligned Chain Segments</strong> (ACS, red) &mdash; locally extended, slow-relaxing, interacting
+            with neighbouring ACS to form <strong>Local Ordered Regions</strong> (LOR) in the melt, present even in
+            atactic polymers; <strong>Random Conformational Sequences</strong> (RCS, blue) &mdash; coiled segments
+            connecting two ACS, with greater conformational freedom; and <strong>Chain Ends</strong> (CE, orange),
+            which behave similarly to RCS but are bounded by a single ACS.
+          </p>
+          <p>
+            Because ACS are aligned and interact with neighbouring segments, they relax orientationally an order of
+            magnitude more slowly than RCS and CE, with stretched-exponential decay
+            (&beta;&nbsp;&asymp;&nbsp;0.5). This heterogeneity provides a direct molecular interpretation of the
+            stretched-exponential relaxation universally observed in polymer melts, where &beta; encodes the
+            cooperativity of conformational rearrangements at the Kuhn scale.
           </p>
           <div class="paper-links">
-            <a class="paper-link" href="https://doi.org/10.1063/5.0315484" target="_blank" rel="noopener">
-              DOI (published)
-            </a>
-            <a class="paper-link" href="https://arxiv.org/abs/2601.02127" target="_blank" rel="noopener">
-              arXiv:2601.02127
-            </a>
-            <a class="paper-link" href="https://arxiv.org/pdf/2601.02127" target="_blank" rel="noopener">
-              unreviewed PDF
-            </a>
+            <a class="paper-link" href="https://doi.org/10.1063/5.0315484" target="_blank" rel="noopener">DOI (published)</a>
+            <a class="paper-link" href="https://arxiv.org/abs/2601.02127" target="_blank" rel="noopener">arXiv:2601.02127</a>
+            <a class="paper-link" href="https://arxiv.org/pdf/2601.02127" target="_blank" rel="noopener">unreviewed PDF</a>
           </div>
         </div>
         <div class="featured-figure">
           <img src="Figure1A_lor.png" alt="Figure 1A: ACS, RCS and CE populations in a polymer chain" />
           <div class="fig-caption">
-			Figure: Mosaic model of a single polyethylene chain (atomistic MD simulation).
-        ACS (red) interact with neighbouring ACS to form Local Ordered Regions (LOR-drawing).
-        RCS (blue): coiled segments connecting ACS. CE (orange): chain ends.
-        For more details on LOR see also <a href="https://doi.org/10.1021/ma4009934" target="_blank" rel="noopener">doi:10.1021/ma4009934</a>.</em>
-		  </div>
+            Figure: Mosaic model of a single polyethylene chain (atomistic MD simulation).
+            ACS (red) interact with neighbouring ACS to form Local Ordered Regions (LOR-drawing).
+            RCS (blue): coiled segments connecting ACS. CE (orange): chain ends.
+            For more details on LOR see also <a href="https://doi.org/10.1021/ma4009934" target="_blank" rel="noopener">doi:10.1021/ma4009934</a>.
+          </div>
         </div>
       </div>
     </section>
@@ -643,27 +633,72 @@
     <!-- RESEARCH -->
     <section id="research">
       <div class="section-label">Research themes</div>
-      <div class="card-grid">
-        <div class="card">
+      <div class="research-stack">
+
+        <!-- ENTANGLEMENTS -->
+        <div class="research-card">
           <h3>What is an entanglement?</h3>
           <p>
             They are described as topological constraints or by "slip-links". Both assume a binary interaction.
             In my view, topological constraints result from hard-core repulsive interactions and cannot explain
-            the elastic properties demonstrated by entangled polymer chains. For a "slip-link" to exist, one has
-            to consider a binary interaction between chain segments and associate to this interaction a potential
-            energy — which requires a detailed look at the morphology of the chain at the atomic scale.
+            the elastic properties demonstrated by entangled polymer chains. Thus, entanglements are not
+            topological constraints (see my work
+            "<a href="https://www.tandfonline.com/doi/full/10.1080/00222341003785151" target="_blank" rel="noopener">Toward a physical definition of entanglements</a>").
+          </p>
+          <p>
+            For a "slip-link" to exist, one has to consider a binary interaction between chain segments and
+            associate to this interaction a potential energy. For this to occur, one has to look in detail at
+            the morphology of the chain at the atomic scale (see section IV.C.4. <em>Relation to entanglements</em> in
+            "<a href="https://doi.org/10.1063/5.0315484" target="_blank" rel="noopener">Beyond the Kuhn Segment: Conformational Substructures and Relaxation Dynamics in Flexible Chains</a>").
+            Here you find an important result:
+            <em>n</em><sub>RCS</sub>&thinsp;<em>k</em><sub>B</sub><em>T</em>&nbsp;&asymp;&nbsp;1.67&thinsp;MPa for polyethylene.
+            This is not an accidental result.
+          </p>
+          <p>
+            Why am I addressing this problem, and why did I feel the need to question the current understanding
+            of entanglements? While studying the origin of the melt memory effect in polymer crystallization
+            (<a href="https://pubs.acs.org/doi/abs/10.1021/ma061143u" target="_blank" rel="noopener"><em>Macromolecules</em> 39, 7626–7634, 2006</a>)
+            I found that saturation of crystallization under shear occurs when the polymer melt reaches a
+            specific state — the steady state. At this state, around 1/3 of the initial entanglements are lost
+            and precursor structures for crystallization are created. These structures persist in melts for times
+            much longer than the reptation time. This means that in polymer melts there is still an undefined
+            relaxation time that is linked to these precursor structures and to the steady state. Further, all
+            the above features are independent of polymer tacticities — they exist also in atactic polymer melts.
+          </p>
+          <p>
+            Hence the key question raised in the <em>Macromolecules</em> 39, 7626–7634, 2006 paper: how can
+            the precursor structures — which are known from experimental results to be short-range ordered
+            structures with chain segments oriented in the flow direction — coexist in a "disentangled" melt at
+            the steady state of shear, which has both elongational and rotational components? Why is a melt at
+            steady state "disentangled"?
+          </p>
+          <p>
+            A possible explanation requires the mosaic model: a relaxed polymer melt with chains above the
+            critical mass is composed of short-range ordered regions where the position of the chain's statistical
+            segments resembles that existing in the unit cell of the crystalline polymer. These regions are composed
+            of the ACS segments. The RCS segments between two ACS are the entropy reservoirs — they are responsible
+            for the entropic elasticity. When flow is applied, the existing short-range ordered regions aggregate
+            into larger regions, their overall number in the melt decreasing. The entanglement loss results only
+            from the aggregation of the short-range order into larger regions oriented with the flow direction.
+            Because the segments in these regions are longer and more aligned with the flow, they persist for a
+            longer time. Hence the longest relaxation time in polymer melts is the isotropization time of these
+            ordered regions in the melt at the steady state.
           </p>
         </div>
-        <div class="card">
+
+        <!-- MELT MEMORY -->
+        <div class="research-card">
           <h3>Melt memory &amp; crystallization</h3>
           <p>
-            Kinetics under quiescent and flow. In start-up shear experiments, the viscosity of both semicrystalline
-            and amorphous polymers saturates at steady state, corresponding to a loss of about one third of the
-            initial entanglements. This loss, together with chain orientation, is responsible for the acceleration
-            of crystallization kinetics in semicrystalline polymers.
+            Kinetics under quiescent and flow conditions. In start-up shear experiments, the viscosity of both
+            semicrystalline and amorphous polymers saturates at steady state, corresponding to a loss of about
+            one third of the initial entanglements. This loss, together with chain orientation, is responsible
+            for the acceleration of crystallization kinetics in semicrystalline polymers.
           </p>
         </div>
-        <div class="card">
+
+        <!-- SHORT-RANGE ORDER -->
+        <div class="research-card">
           <h3>Short-range order</h3>
           <p>
             I have identified the short-range order that explains the experimentally demonstrated "solid-like"
@@ -674,13 +709,16 @@
             molecules in the solid state.
           </p>
         </div>
-        <div class="card">
+
+        <!-- INSTRUMENTATION -->
+        <div class="research-card">
           <h3>Instrumentation</h3>
           <p>
             Design and construction of a shear-DTA instrument. Rheometer and DSC calibration. Systematic analysis
             of temperature errors in thermal analysis and their propagation into crystallization kinetics.
           </p>
         </div>
+
       </div>
     </section>
 
@@ -906,7 +944,7 @@
     <!-- SOFTWARE -->
     <section id="software">
       <div class="section-label">Software</div>
-      <div class="card-grid">
+      <div style="display:grid; gap:16px; grid-template-columns: repeat(auto-fit, minmax(280px,1fr));">
         <div class="card">
           <h3>Fortran codes</h3>
           <p style="color:var(--faint); font-size:13px; margin-bottom:10px;">Coming soon</p>
@@ -956,11 +994,11 @@
           A formal complaint has been submitted to the Attorney General's Office.
         </p>
         <p>
-		My position has affected my personal life and my career within the institution, and it is also one of the
-		reasons for the difficulties I have faced in developing my work.
-		My application for Habilitation proofs, which included the above three pedagogical texts and a 100-page lesson on the physical nature of
-        entanglements, was denied by six jury members, three from external institution, three without knowledge of polymers, and three more focused
-		on Polymer Processing,  with basic knowledge of general Polymer Science, but none with knowledge of Polymer Physics.
+          My position has affected my personal life and my career within the institution, and it is also one of the
+          reasons for the difficulties I have faced in developing my work.
+          My application for Habilitation proofs, which included the above three pedagogical texts and a 100-page lesson on the physical nature of
+          entanglements, was denied by six jury members, three from external institution, three without knowledge of polymers, and three more focused
+          on Polymer Processing, with basic knowledge of general Polymer Science, but none with knowledge of Polymer Physics.
         </p>
       </div>
     </section>
