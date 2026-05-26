@@ -525,22 +525,58 @@
       </div>
     </header>
 
-    <!-- JUST SUBMITTED -->
-    <section id="submitted">
-      <div class="section-label">Just submitted · arXiv 2026</div>
-      <div class="submitted-card">
-        <div class="submitted-body">
-          <div class="journal-tag">arXiv</div>
-          <h2>Beyond Gaussian Statistics in Polymer Melts: Statistical Masking of Persistent Local Constraints</h2>
-          <p>In a moment&hellip;</p>
-          <div class="paper-links">
-            <a class="paper-link" href="https://arxiv.org/abs/xxxx.xxxx" target="_blank" rel="noopener">
-              arXiv:xxxxx.xxxxx
-            </a>
-          </div>
-        </div>
+<!-- JUST SUBMITTED -->
+<section id="submitted">
+  <div class="section-label">Just submitted · arXiv 2026</div>
+  <div class="submitted-card">
+    <div class="submitted-body">
+      <div class="journal-tag">arXiv</div>
+      <h2>Beyond Gaussian Statistics in Polymer Melts: Statistical Masking of Persistent Local Constraints</h2>
+
+      <p>I discuss in this work the consequences of the Kuhn scale heterogeneity of the end-to-end distribution of polymer chains. 
+        Molecular dynamics simulations allow a direct measurement of this distance for chains with different length.
+        The current model for this end-to-end distribution is Flory's random coil model, built upon small angle neutron scattering 
+        results on deuterated polymer chains under theta conditions and in polymer melts.
+        The property measured is the second moment of the radius of gyration, which is related, under the ideality assumption,
+        to the second moment of the distribution &mdash; not the distribution itself.
+        Because this measured second moment scales with chain length, it is assumed that the end-to-end distribution is Gaussian.
+        In fact, we know that short chains are non-Gaussian and Gaussianity is recovered only for longer chains, above a critical mass.</p>
+
+      <p>But the question remains: what makes Gaussianity appear for such long chains? 
+        Is it somehow related to entropic elasticity?
+        How should non-Gaussianity be modelled? 
+        Since polymer chains are heterogeneous at the Kuhn segment scale, 
+        is this heterogeneity related to the non-Gaussianity and the transition to Gaussianity? 
+        The entropy of a Gaussian chain is estimated from the Boltzmann&ndash;Gibbs (BG) entropy definition &mdash;
+        but does this definition hold for a non-Gaussian chain?</p>
+
+      <p>Short answers:</p>
+      <ol>
+        <li>Short chains contain only ACS and CE segments.</li>
+        <li>Their end-to-end distribution is described by a <em>q</em>-Gaussian, with <em>q</em> &lt; 1.</li>
+        <li>The ratio of Tsallis to BG entropy (<em>S</em><sub>q</sub>/<em>S</em><sub>1</sub>) is greater than one, 
+          meaning that the conformational space explored by short chains greatly exceeds what BG statistics would predict for a chain of the same length.</li>
+        <li>As chain length increases, <em>q</em> approaches 1 and BG statistics is recovered. This evolution tracks the appearance and growth of RCS segments.</li>
+        <li>The RCS distributions evolve from moderately non-Gaussian in short chains to indistinguishable from Gaussian in long chains. 
+          As RCS accumulate, their nearly Gaussian statistics progressively dominate the whole-chain distribution,
+          masking the persistently non-Gaussian character of the ACS domains &mdash;
+          which remain present at roughly 35% of the chain mass even in the longest chains studied.
+          Gaussianity is therefore a statistical masking effect: 
+           the persistent structural heterogeneity is hidden behind a growing population of Gaussian RCS segments.</li>
+        <li>The number-average length of the RCS segments saturates at a constant value once Gaussianity is recovered.</li>
+        <li>I hypothesize that the entropic index <em>q</em> acts as a heterogeneity index: for flexible chains <em>q</em> &lt;
+          1 and <em>S</em><sub>q</sub>/<em>S</em><sub>1</sub> &gt; 1, while for stiff or densely branched chains with short branches the opposite should hold.
+          I invite other authors to test this prediction.</li>
+      </ol>
+
+      <div class="paper-links">
+        <a class="paper-link" href="https://arxiv.org/abs/2605.25989" target="_blank" rel="noopener">
+          arXiv:2605.25989
+        </a>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
     <!-- FEATURED PAPER -->
     <section id="featured">
